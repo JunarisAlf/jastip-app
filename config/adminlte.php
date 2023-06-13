@@ -129,8 +129,9 @@ return [
     |
     */
 
+    
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
@@ -258,7 +259,7 @@ return [
     'login_url' => 'login',
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
-    'password_email_url' => 'password/email',
+    'password_email_url' => 'password/email',  
     'profile_url' => false,
 
     /*
@@ -292,8 +293,7 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
+            'type'         => 'darkmode-widget',
             'topnav_right' => true,
         ],
         [
@@ -302,87 +302,65 @@ return [
         ],
 
         // Sidebar items:
+       
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text'        => 'Dashboard',
+            'url'         => '',
+            'icon'        => 'fa fa-home',
+        ],
+        ['header' => 'MENU'],
+        [
+            'text' => 'Order',
+            'url'  => '/pesanan',
+            'icon' => 'fas fa-receipt',
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Toko',
+            'url'  => '/toko',
+            'icon' => 'fas fa-store',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'Kurir',
+            'url'  => '/kurir',
+            'icon' => 'fas fa-motorcycle',
         ],
-        ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Cabang',
+            'url'  => '/cabang',
+            'icon' => 'fas fa-route',
         ],
+        [
+            'text' => 'Admin',
+            'url'  => '/kurir',
+            'icon' => 'fas fa-user',
+        ],
+
+        ['header' => 'OTHER'],
+        [
+            'text' => 'Iklan',
+            'url'  => '/iklan',
+            'icon' => 'fas fa-dollar-sign',
+        ],
+        [
+            'text' => 'Setting',
+            'url'  => '/setting',
+            'icon' => 'fas fa-cog',
+        ],
+
+        
+        ['header' => 'ACCOUNT'],
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            'text' => 'Log Out',
+            'route' => 'logout',
+            'icon' => 'fas fa-sign-out-alt',
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+ 
+      
     ],
 
     /*
