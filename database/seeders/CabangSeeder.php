@@ -14,10 +14,13 @@ class CabangSeeder extends Seeder
     public function run(): void
     {
         Cabang::create([
-            'name' => 'Cabang A'
+            'name'          => 'Cabang A',
+            'keterangan'    => 'Desa Sukajadi',
+
         ]);
         Cabang::create([
-            'name' => 'Cabang B'
+            'name'          => 'Cabang B',
+            'keterangan'    => 'Desa Sukadamai',
         ]);
        
     }
