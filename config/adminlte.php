@@ -305,7 +305,7 @@ return [
        
         [
             'text'        => 'Dashboard',
-            'url'         => '',
+            'route'       => 'admin.home',
             'icon'        => 'fa fa-home',
         ],
         ['header' => 'MENU'],
@@ -326,8 +326,9 @@ return [
         ],
         [
             'text' => 'Cabang',
-            'url'  => '/cabang',
+            'route'=> 'admin.cabang',
             'icon' => 'fas fa-route',
+            'can'  => 'superadmin'
         ],
         [
             'text' => 'Admin',

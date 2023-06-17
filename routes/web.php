@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CabangController;
 use App\Http\Controllers\DashbaordController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,12 +21,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('/admin')->group(function(){
-    Route::get('/login', [AuthController::class, 'loginPage'])->name('loginPage')->middleware('guest');
-    Route::post('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
+Route::get('admin/login', [AuthController::class, 'loginPage'])->name('loginPage')->middleware('guest');
+Route::post('admin/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 
-    Route::middleware('auth')->group(function(){
-        Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-        Route::get('/dashboard', [DashbaordController::class, 'index'])->name('admin.home');
+Route::prefix('/admin')->middleware('auth')->group(function(){
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/dashboard', [DashbaordController::class, 'index'])->name('admin.home');
+
+    Route::middleware('superadmin')->group(function(){
+        Route::get('/cabang', [CabangController::class, 'index'])->name('admin.cabang');
+    });
+    Route::middleware('admin')->group(function(){
+
     });
 });
