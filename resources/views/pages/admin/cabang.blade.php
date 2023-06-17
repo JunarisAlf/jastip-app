@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-12">
                 @livewire('cabang.create')
-                <x-adminlte-card title="Laporan Transaksi" theme="success" icon="fas fa-boxes">
+                <x-adminlte-card title="Daftar Cabang" theme="success" icon="fas fa-route">
                     @livewire('cabang.table')
                 </x-adminlte-card>
             </div>
