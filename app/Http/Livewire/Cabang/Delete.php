@@ -23,7 +23,7 @@ class Delete extends Component
         $this->emit('refresh_cabang_table');
         $this->emit('refresh_alert', [
             'show' => 1, 
-            'msg' => 'Berhasil meghapus data transaksi '. $this->name,
+            'msg' => 'Berhasil meghapus data Cabang '. $this->name,
             'theme' => 'info',
             'title' => 'Info'
         ]);
