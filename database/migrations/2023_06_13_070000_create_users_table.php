@@ -15,9 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('username')->unique();
             $table->string('full_name');
-            $table->string('wa_number');
+            $table->string('wa_number')->unique();
             $table->string('password');
-            $table->foreignId('cabang_id')->nullable();
+            $table->string('img_name')->nullable();
+            $table->string('note')->nullable();
+            $table->foreignId('cabang_id')
+                  ->nullable()
+                  ->constrained('cabang', 'id', 'admin_cabang')
+                  ->nullOnDelete()
+                  ->cascadeOnUpdate();
             $table->enum('role', ['superadmin', 'admin']);
             $table->timestamps();
         });

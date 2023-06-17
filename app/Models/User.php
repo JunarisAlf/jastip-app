@@ -16,7 +16,7 @@ class User extends Authenticatable
     protected $table = 'users';
     protected $primaryKey = 'id';
     protected $hidden = ['password'];
-    protected $fillable = ['username', 'full_name', 'wa_number', 'password', 'role'];
+    protected $guarded = ['id'];
 
     public function cabang(){
         return $this->belongsTo(Cabang::class, 'cabang_id', 'id');

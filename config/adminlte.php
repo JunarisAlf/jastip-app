@@ -332,7 +332,7 @@ return [
         ],
         [
             'text' => 'Admin',
-            'url'  => '/kurir',
+            'route'=> 'admin.admin',
             'icon' => 'fas fa-user',
         ],
 

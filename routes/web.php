@@ -30,6 +30,8 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
 
     Route::middleware('superadmin')->group(function(){
         Route::get('/cabang', [CabangController::class, 'index'])->name('admin.cabang');
+        Route::get('/admin', [AdminController::class, 'index'])->name('admin.admin');
+
     });
     Route::middleware('admin')->group(function(){
 

@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
             'wa_number'     => '6282284393018',
             'password'      => '123123',
             'role'          => 'superadmin',
+            'img_name'      => 'default.jpg',
         ]);
 
         User::create([
@@ -25,7 +26,9 @@ class UserSeeder extends Seeder
             'wa_number'     => '6282284393019',
             'password'      => '123123',
             'role'          => 'admin',
-            'cabang_id'     => 1
+            'cabang_id'     => 1,
+            'img_name'      => 'default.jpg',
+
         ]);
         User::create([
             'username'      => 'admin_b',
@@ -33,7 +36,8 @@ class UserSeeder extends Seeder
             'wa_number'     => '6282284393020',
             'password'      => '123123',
             'role'          => 'admin',
-            'cabang_id'     => 2
+            'cabang_id'     => 2,
+            'img_name'      => 'default.jpg',
         ]);
     }
 }
