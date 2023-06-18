@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CabangController;
 use App\Http\Controllers\DashbaordController;
+use App\Http\Controllers\KurirController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,7 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
     Route::middleware('superadmin')->group(function(){
         Route::get('/cabang', [CabangController::class, 'index'])->name('admin.cabang');
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.admin');
+        Route::get('/kurir', [KurirController::class, 'index'])->name('admin.kurir');
 
     });
     Route::middleware('admin')->group(function(){

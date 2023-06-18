@@ -321,7 +321,7 @@ return [
         ],
         [
             'text' => 'Kurir',
-            'url'  => '/kurir',
+            'route'=> 'admin.kurir',
             'icon' => 'fas fa-motorcycle',
         ],
         [
