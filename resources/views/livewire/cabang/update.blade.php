@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header bg-warning">
                 <h4 class="modal-title">
-                    <i class="fas fa-pencil-alt mr-2"></i> Update Data Transaksi
+                    <i class="fas fa-pencil-alt mr-2"></i> Update Data Admin
                 </h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"
                     wire:click="$set('show', 'hidden')">
