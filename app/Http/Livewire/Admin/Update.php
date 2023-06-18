@@ -22,7 +22,7 @@ class Update extends Component
             'wa_number'     => ['required', 'string', 'starts_with:628', Rule::unique('users', 'wa_number')->ignore($this->admin_id)],
             'file'          => 'nullable|mimes:jpg,png,jpeg|max:1024',
             'note'          => 'nullable|string',
-            'cabang_id'     => 'required|exists:cabang,id'
+            'cabang_id'     => 'required|exists:cabangs,id'
         ];
     } 
     public function mount(){

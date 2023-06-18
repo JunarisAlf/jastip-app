@@ -20,7 +20,7 @@ class Create extends Component
         'password'      => 'required|string|min:6',
         'file'          => 'required|mimes:jpg,png,jpeg|max:1024',
         'note'          => 'nullable|string',
-        'cabang_id'     => 'required|exists:cabang,id'
+        'cabang_id'     => 'required|exists:cabangs,id'
     ];
     public function mount(){
         $this->cabangs = Cabang::all();
