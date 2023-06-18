@@ -316,7 +316,7 @@ return [
         ],
         [
             'text' => 'Toko',
-            'url'  => '/toko',
+            'route'=> 'admin.toko',
             'icon' => 'fas fa-store',
         ],
         [
