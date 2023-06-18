@@ -9,11 +9,11 @@ class Table extends Component
 {
     public $kurirs = [];
     public function mount(){
-        $this->kurirs = Kurir::all();
+        $this->kurirs = Kurir::orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
     }
     protected $listeners = ['refresh_kurir_table' => 'refresh'];
     public function refresh(){
-        $this->kurirs = Kurir::all();
+        $this->kurirs = Kurir::orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
     }
 
     public function edit($id){
