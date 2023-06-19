@@ -24,7 +24,7 @@ class Update extends Component
             'latlong'       => 'required|string',
             'file_cover'    => 'nullable|mimes:jpg,png,jpeg|max:1024',
             'file_profile'  => 'nullable|mimes:jpg,png,jpeg|max:1024',
-            'cabang_id'     => 'required|exists:cabangs,id'
+            'cabang_id'     => [Rule::requiredIf(auth()->user()->role == 'superadmin'), 'nullable','exists:cabangs,id']
         ];
     }
 
@@ -42,7 +42,11 @@ class Update extends Component
         $this->latlong = $toko->lat . ',' . $toko->long;
         $this->cover_img = $toko->cover_img;
         $this->profile_img = $toko->profile_img;
-        $this->cabang_id = $toko->cabang_id;
+        if(auth()->user()->role == 'superadmin'){
+            $this->cabang_id = $toko->cabang_id;
+        }else{
+            $this->cabang_id = auth()->user()->cabang->id;
+        }
         $this->show = 'block';
     }
 

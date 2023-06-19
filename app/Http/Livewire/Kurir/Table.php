@@ -9,11 +9,21 @@ class Table extends Component
 {
     public $kurirs = [];
     public function mount(){
-        $this->kurirs = Kurir::orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        $user = auth()->user();
+        if($user->role == 'superadmin'){
+            $this->kurirs = Kurir::orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        }else if($user->role == 'admin'){
+            $this->kurirs = Kurir::where('cabang_id', $user->cabang->id)->orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        }
     }
     protected $listeners = ['refresh_kurir_table' => 'refresh'];
     public function refresh(){
-        $this->kurirs = Kurir::orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        $user = auth()->user();
+        if($user->role == 'superadmin'){
+            $this->kurirs = Kurir::orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        }else if($user->role == 'admin'){
+            $this->kurirs = Kurir::where('cabang_id', $user->cabang->id)->orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        }
     }
 
     public function edit($id){

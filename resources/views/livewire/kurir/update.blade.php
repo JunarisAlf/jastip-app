@@ -64,7 +64,8 @@
                         </div>
                     </x-slot>
                 </x-adminlte-input>
-        
+                
+                @can('superadmin', auth()->user())
                 <x-adminlte-select name="cabang_id" label="Cabang"  igroup-size="md" wire:model="cabang_id">
                     <x-slot name="prependSlot">
                         <div class="input-group-text">
@@ -76,7 +77,7 @@
                             <option value="{{$cabang->id}}">{{$cabang->name}}</option>
                         @endforeach
                 </x-adminlte-select>
-                
+                @endcan
 
             </div>
             <div class="modal-footer">

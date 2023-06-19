@@ -9,11 +9,21 @@ class Table extends Component
 {
     public $tokos = [];
     public function mount(){
-        $this->tokos = Toko::orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        $user = auth()->user();
+        if($user->role == 'superadmin'){
+            $this->tokos = Toko::orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        }else if($user->role == 'admin'){
+            $this->tokos = Toko::where('cabang_id', $user->cabang->id)->orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        }
     }
     protected $listeners = ['refresh_toko_table' => 'refresh'];
     public function refresh(){
-        $this->tokos = Toko::orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        $user = auth()->user();
+        if($user->role == 'superadmin'){
+            $this->tokos = Toko::orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        }else if($user->role == 'admin'){
+            $this->tokos = Toko::where('cabang_id', $user->cabang->id)->orderBy('cabang_id', 'DESC')->orderBy('id', 'DESC')->get();
+        }
     }
     public function edit($id){
         $this->emit('edit_toko', $id);

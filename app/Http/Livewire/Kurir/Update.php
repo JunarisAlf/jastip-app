@@ -23,7 +23,7 @@ class Update extends Component
             'file_ktp'      => 'nullable|mimes:jpg,png,jpeg|max:1024',
             'file_profile'  => 'nullable|mimes:jpg,png,jpeg|max:1024',
             'wa_number'     => ['required', 'string', 'starts_with:628', Rule::unique('kurirs', 'wa_number')->ignore($this->kurir_id)],
-            'cabang_id'     => 'required|exists:cabangs,id'
+            'cabang_id'     => [Rule::requiredIf(auth()->user()->role == 'superadmin'), 'nullable','exists:cabangs,id']
         ];
     }
 
@@ -40,7 +40,11 @@ class Update extends Component
         $this->ktp_img = $kurir->ktp_img;
         $this->profile_img = $kurir->profile_img;
         $this->wa_number = $kurir->wa_number;
-        $this->cabang_id = $kurir->cabang_id;
+        if(auth()->user()->role == 'superadmin'){
+            $this->cabang_id = $kurir->cabang_id;
+        }else{
+            $this->cabang_id = auth()->user()->cabang->id;
+        }
         $this->show = 'block';
     }
 

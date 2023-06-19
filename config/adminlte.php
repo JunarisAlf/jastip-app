@@ -333,6 +333,7 @@ return [
         [
             'text' => 'Admin',
             'route'=> 'admin.admin',
+            'can'  => 'superadmin',
             'icon' => 'fas fa-user',
         ],
 

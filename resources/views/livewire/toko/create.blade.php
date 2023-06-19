@@ -56,6 +56,8 @@
             </x-slot>
         </x-adminlte-input-file>
 
+        @can('superadmin', auth()->user())
+        {{-- show only to superadmin --}}
         <x-adminlte-select name="cabang_id" label="Cabang" label-class="text-success" igroup-size="md" wire:model="cabang_id">
             <x-slot name="prependSlot">
                 <div class="input-group-text bg-gradient-success">
@@ -67,6 +69,8 @@
                     <option value="{{$cabang->id}}">{{$cabang->name}}</option>
                 @endforeach
         </x-adminlte-select>
+        @endcan
+        
 
         <x-slot name="footerSlot">
             <x-adminlte-button class="d-flex ml-auto px-3 py-2" theme="success" label="Tambah" type='submit' />

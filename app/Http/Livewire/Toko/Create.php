@@ -6,6 +6,7 @@ use App\Models\Cabang;
 use App\Models\Toko;
 use Livewire\Component;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Livewire\WithFileUploads;
 
 class Create extends Component
@@ -14,16 +15,18 @@ class Create extends Component
     use WithFileUploads;
     public $name, $description, $wa_number, $address, $latlong, $file_cover, $file_profile, $cabang_id;
     public $cabangs = [];
-    public $rules = [
-        'name'          => 'required|string',
-        'description'   => 'required|string',
-        'wa_number'     => 'required|string|starts_with:628|unique:tokos,wa_number',
-        'address'       => 'required|string',
-        'latlong'       => 'required|string',
-        'file_cover'    => 'required|mimes:jpg,png,jpeg|max:1024',
-        'file_profile'  => 'required|mimes:jpg,png,jpeg|max:1024',
-        'cabang_id'     => 'required|exists:cabangs,id'
-    ];
+    public function rules(){
+        return [
+            'name'          => 'required|string',
+            'description'   => 'required|string',
+            'wa_number'     => 'required|string|starts_with:628|unique:tokos,wa_number',
+            'address'       => 'required|string',
+            'latlong'       => 'required|string',
+            'file_cover'    => 'required|mimes:jpg,png,jpeg|max:1024',
+            'file_profile'  => 'required|mimes:jpg,png,jpeg|max:1024',
+            'cabang_id'     => [ Rule::requiredIf(auth()->user()->role == 'superadmin'), 'nullable','exists:cabangs,id']
+        ];
+    }
     public function mount(){
         $this->cabangs = Cabang::all();
     }
@@ -43,6 +46,10 @@ class Create extends Component
         $validatedData['lat'] = floatval($latlong[0]);
         $validatedData['long'] = floatval($latlong[1]);
 
+        // cabang_id for admin
+        if(auth()->user()->role == 'admin'){
+            $validatedData['cabang_id'] = auth()->user()->cabang->id;
+        }
         Toko::create($validatedData);
         $this->resetExcept('cabangs');
         $this->emit('refresh_alert', [
