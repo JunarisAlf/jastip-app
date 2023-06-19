@@ -60,6 +60,7 @@
                         </div>
                     </x-slot>
                 </x-adminlte-input-file>
+                <img src="{{asset('storage/toko') . '/' . $cover_img}}" alt="Foto Cover" height="100px">
         
                 <x-adminlte-input-file name="file_profile" label="Foto Profile Toko" igroup-size="sm" placeholder="Upload Foto Profile Toko"  wire:model="file_profile">
                     <x-slot name="prependSlot">
@@ -68,6 +69,8 @@
                         </div>
                     </x-slot>
                 </x-adminlte-input-file>
+                <img src="{{asset('storage/toko') . '/' . $profile_img}}" alt="Foto Profile Toko" height="100px">
+
 
                 @can('superadmin', auth()->user())
                 <x-adminlte-select name="cabang_id" label="Cabang"  igroup-size="md" wire:model="cabang_id">
