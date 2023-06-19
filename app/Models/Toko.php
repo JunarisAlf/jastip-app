@@ -15,4 +15,7 @@ class Toko extends Model
     public function cabang(){
         return $this->belongsTo(Cabang::class, 'cabang_id', 'id');
     }
+    public function products(){
+        return $this->hasMany(Product::class, 'toko_id', 'id');
+    }
 }

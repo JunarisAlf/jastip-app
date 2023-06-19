@@ -40,6 +40,10 @@
                         wire:click="edit({{$toko->id}})"/>
                         <x-adminlte-button class="btn-sm" theme="danger" icon="fas fa-trash-alt"
                         wire:click="delete({{$toko->id}}, '{{$toko->name}}')"/>
+                        <a href="{{route('admin.product', ['toko' => $toko->id])}}">
+                            <x-adminlte-button class="btn-sm" theme="info" icon="fas fa-boxes"/>
+                        </a>
+                        
                     </td>
                 </tr>
             @endforeach

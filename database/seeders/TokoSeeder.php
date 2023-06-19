@@ -33,7 +33,7 @@ class TokoSeeder extends Seeder
             'long'          => 101.4200681601453,
             'cover_img'     => 'cover_default.jpg',
             'profile_img'   => 'profile_default.png',
-            'cabang_id'     => 1
+            'cabang_id'     => 2
         ]);
     }
 }

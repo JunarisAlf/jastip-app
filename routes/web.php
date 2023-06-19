@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CabangController;
 use App\Http\Controllers\DashbaordController;
 use App\Http\Controllers\KurirController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TokoController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,7 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
     });
     Route::get('/kurir', [KurirController::class, 'index'])->name('admin.kurir');
     Route::get('/toko', [TokoController::class, 'index'])->name('admin.toko');
+    Route::get('/toko/{toko}/produk', [ProductController::class, 'index'])->name('admin.product');
     Route::middleware('admin')->group(function(){
 
     });
