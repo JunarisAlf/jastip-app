@@ -337,16 +337,24 @@ return [
             'icon' => 'fas fa-user',
         ],
 
-        ['header' => 'OTHER'],
+        [
+            'header' => 'OTHER',
+            'can'  => 'superadmin',
+
+        ],
         [
             'text' => 'Iklan',
-            'url'  => '/iklan',
+            'route' => 'admin.ads',
             'icon' => 'fas fa-dollar-sign',
+            'can'  => 'superadmin',
+
         ],
         [
             'text' => 'Setting',
             'url'  => '/setting',
             'icon' => 'fas fa-cog',
+            'can'  => 'superadmin',
+
         ],
 
         

@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(KurirSeeder::class);
         $this->call(TokoSeeder::class);
         $this->call(ProductSeeder::class);
+        $this->call(AdsSeeder::class);
 
     }
 }
