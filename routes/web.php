@@ -29,6 +29,8 @@ Route::post('admin/login', [AuthController::class, 'login'])->name('login')->mid
 
 Route::prefix('/admin')->middleware('auth')->group(function(){
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/ganti-password', [AuthController::class, 'changePassword'])->name('admin.changePassword');
+
     Route::get('/dashboard', [DashbaordController::class, 'index'])->name('admin.home');
 
     Route::middleware('superadmin')->group(function(){
@@ -38,7 +40,5 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
     Route::get('/kurir', [KurirController::class, 'index'])->name('admin.kurir');
     Route::get('/toko', [TokoController::class, 'index'])->name('admin.toko');
     Route::get('/toko/{toko}/produk', [ProductController::class, 'index'])->name('admin.product');
-    Route::middleware('admin')->group(function(){
-
-    });
+  
 });

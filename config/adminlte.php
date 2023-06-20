@@ -353,7 +353,7 @@ return [
         ['header' => 'ACCOUNT'],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'route' => 'admin.changePassword',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
