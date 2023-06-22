@@ -5,6 +5,7 @@ use App\Http\Controllers\AdsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CabangController;
 use App\Http\Controllers\DashbaordController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\KurirController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TokoController;
@@ -42,5 +43,14 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
     Route::get('/toko', [TokoController::class, 'index'])->name('admin.toko');
     Route::get('/toko/{toko}/produk', [ProductController::class, 'index'])->name('admin.product');
     Route::get('/iklan', [AdsController::class, 'index'])->name('admin.ads');
-  
 });
+
+Route::get('/', [FrontController::class, 'index'])->name('front.index');
+Route::get('/item', [FrontController::class, 'searchRes'])->name('front.searchRes');
+Route::get('/toko', [FrontController::class, 'catalog'])->name('front.catalog');
+Route::get('/order', [FrontController::class, 'order'])->name('front.order');
+Route::get('/confirm', [FrontController::class, 'confirm'])->name('front.confirm');
+
+
+
+
