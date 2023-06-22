@@ -13,7 +13,7 @@ class Update extends Component
 {
     use WithFileUploads;
     public $show = 'hidden';
-    public $toko_id, $name, $description, $wa_number, $address, $latlong, $cover_img, $profile_img ,$file_cover, $file_profile, $cabang_id;
+    public $toko_id, $slug,$name, $description, $wa_number, $address, $latlong, $cover_img, $profile_img ,$file_cover, $file_profile, $cabang_id;
     public $cabangs = [];
     public function rules(){
         return [
@@ -69,6 +69,8 @@ class Update extends Component
         $latlong = explode(',', str_replace(' ', '', $this->latlong));
         $validatedData['lat'] = floatval($latlong[0]);
         $validatedData['long'] = floatval($latlong[1]);
+        // slug
+        $validatedData['slug'] = Str::slug($validatedData['name'], '_');
 
         $toko->fill($validatedData);
         $toko->save();

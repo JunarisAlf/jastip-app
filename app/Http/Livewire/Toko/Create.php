@@ -13,11 +13,11 @@ class Create extends Component
 {
 
     use WithFileUploads;
-    public $name, $description, $wa_number, $address, $latlong, $file_cover, $file_profile, $cabang_id;
+    public $name, $slug,$description, $wa_number, $address, $latlong, $file_cover, $file_profile, $cabang_id;
     public $cabangs = [];
     public function rules(){
         return [
-            'name'          => 'required|string',
+            'name'          => 'required|string|unique:tokos,name',
             'description'   => 'required|string',
             'wa_number'     => 'required|string|starts_with:628|unique:tokos,wa_number',
             'address'       => 'required|string',
@@ -46,6 +46,8 @@ class Create extends Component
         $validatedData['lat'] = floatval($latlong[0]);
         $validatedData['long'] = floatval($latlong[1]);
 
+        // Slug
+        $validatedData['slug'] = Str::slug($validatedData['name'], '_');
         // cabang_id for admin
         if(auth()->user()->role == 'admin'){
             $validatedData['cabang_id'] = auth()->user()->cabang->id;

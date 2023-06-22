@@ -14,10 +14,16 @@
     @include('pages.customer.layout.footer')
 </main>
 
-@include('pages.customer.layout.catalog-modal')
-
+{{-- @include('pages.customer.layout.catalog-modal') --}}
+@livewire('catalog.modal')
 @endsection
 
 @section('js')
+    @livewireScripts
     <script src={{asset('vendor/themplate/js/specific_detail.js')}}></script>
 @endsection
+
+@section('css')
+    @livewireStyles
+    <script src="//unpkg.com/alpinejs" defer></script>
+@stop

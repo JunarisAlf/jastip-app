@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ads;
 use App\Models\Cabang;
 use App\Models\Product;
+use App\Models\Toko;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -26,8 +27,9 @@ class FrontController extends Controller
         $cabang = Cabang::all();
         return view('pages.customer.search-result', ['ads' => $ads, 'cabang' => $cabang, 'products' => $products]);
     }
-    public function catalog(){
-        return view('pages.customer.catalog');
+    public function catalog(Request $req){
+        $toko = Toko::with('products')->where('slug', $req->slug)->firstOrFail();
+        return view('pages.customer.catalog', ['toko' => $toko]);
     }
     public function order(){
         return view('pages.customer.order');

@@ -4,6 +4,7 @@
         <thead>
             <tr>
                 <th>Nama Toko</th>
+                <th>Slug</th>
                 <th>Nomor WA</th>
                 <th>Cabang</th>
                 <th>Deskripsi</th>
@@ -17,6 +18,7 @@
             @foreach ($tokos as $toko)
                 <tr>
                     <td>{{$toko->name}}</td>
+                    <td>{{$toko->slug}}</td>
                     <td>{{$toko->wa_number}}</td>
                     <td>{{$toko->cabang->name}}</td>
                     <td>{{$toko->description}}</td>

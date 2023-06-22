@@ -15,6 +15,7 @@ class TokoSeeder extends Seeder
     {
         Toko::create([
             'name'          => 'Toko A1',
+            'slug'          => 'toko_a1',
             'description'   => 'Deskripsi Toko',
             'wa_number'     => '6282298097',
             'address'       => 'Jl. Durian N0. 10',
@@ -26,6 +27,7 @@ class TokoSeeder extends Seeder
         ]);
         Toko::create([
             'name'          => 'Toko B1',
+            'slug'          => 'toko_b1',
             'description'   => 'Deskripsi Toko',
             'wa_number'     => '6282298098',
             'address'       => 'Jl. Durian N0. 12',
