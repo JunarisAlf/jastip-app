@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    @include('pages.customer.layout.search-item')
+    @include('pages.customer.layout.search-item', ['products' => $products])
     @include('pages.customer.layout.ads')
     @include('pages.customer.layout.cabang')
     @include('pages.customer.layout.footer')

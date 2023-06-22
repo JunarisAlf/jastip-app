@@ -1,5 +1,5 @@
 @extends('pages.customer.layout.index')
-@section('title', 'Home')
+@section('title', 'SobatKurir | Pesan Makanan Dengan Mudah')
 
 @section('css')
     <link href={{asset('vendor/themplate/css/home.css')}} rel="stylesheet">

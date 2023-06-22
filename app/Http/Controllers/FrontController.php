@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ads;
 use App\Models\Cabang;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -13,10 +14,17 @@ class FrontController extends Controller
         $cabang = Cabang::all();
         return view('pages.customer.home', ['ads' => $ads, 'cabang' => $cabang]);
     }
-    public function searchRes(){
+    public function searchRes(Request $req){
+        $query = $req->cari;
+        $products = [];
+        if($query == null){
+            $products = Product::all();
+        }else{
+            $products = Product::where('name', 'like', '%' . $query . '%')->get();
+        }
         $ads = Ads::where('is_active', true)->get();
         $cabang = Cabang::all();
-        return view('pages.customer.search-result', ['ads' => $ads, 'cabang' => $cabang]);
+        return view('pages.customer.search-result', ['ads' => $ads, 'cabang' => $cabang, 'products' => $products]);
     }
     public function catalog(){
         return view('pages.customer.catalog');
