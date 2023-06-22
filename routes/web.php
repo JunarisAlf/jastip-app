@@ -47,6 +47,7 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
 Route::get('/item', [FrontController::class, 'searchRes'])->name('front.searchRes');
+Route::get('/cabang', [FrontController::class, 'cabangRes'])->name('front.cabangRes');
 Route::get('/toko/{slug}', [FrontController::class, 'catalog'])->name('front.catalog');
 Route::get('/order', [FrontController::class, 'order'])->name('front.order');
 Route::get('/confirm', [FrontController::class, 'confirm'])->name('front.confirm');

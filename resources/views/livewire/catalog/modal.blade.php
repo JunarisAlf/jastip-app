@@ -1,4 +1,4 @@
-<div id="modal-dialog" class="zoom-anim-dialog ">
+<div id="modal-dialog" class="zoom-anim-dialog display-none">
     <div class="small-dialog-header">
         <h3>{{$name}}</h3>
     </div>
@@ -12,9 +12,7 @@
     </div>
     <div class="footer">
         <div class="row small-gutters">
-            
         </div>
-        <!-- /Row -->
     </div>
     <button title="Close (Esc)" type="button" class="mfp-close"></button>
 </div>

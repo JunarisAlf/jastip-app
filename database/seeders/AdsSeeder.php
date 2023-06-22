@@ -15,16 +15,19 @@ class AdsSeeder extends Seeder
     {
         Ads::create([
             'name'              => 'Iklan 01',
+            'link'              => 'http://127.0.0.1:8000/toko/toko_a1',
             'is_active'         => true,
             'banner_img'        => 'ads_default.jpg'
         ]);
         Ads::create([
             'name'              => 'Iklan 02',
+            'link'              => 'http://127.0.0.1:8000/toko/toko_a1',
             'is_active'         => true,
             'banner_img'        => 'ads_default.jpg'
         ]);
         Ads::create([
             'name'              => 'Iklan 03',
+            'link'              => 'http://127.0.0.1:8000/toko/toko_a1',
             'is_active'         => true,
             'banner_img'        => 'ads_default.jpg'
         ]);

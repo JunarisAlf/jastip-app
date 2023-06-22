@@ -1,6 +1,8 @@
 @extends('pages.customer.layout.index')
 @section('title', 'Hasil Pencarian')
-
+@section('css')
+    <link href={{asset('vendor/themplate/css/home.css')}} rel="stylesheet">
+@endsection
 @section('content')
 
 @include('pages.customer.layout.header')
@@ -10,8 +12,10 @@
             <div class="row">
                 <div class="col-xl-4 col-lg-5 col-md-5">
                     <div class="search_bar_list">
-                        <input type="text" class="form-control" placeholder="Seblak, Basreng, Bakso, dll">
-                        <button type="submit"><i class="icon_search"></i></button>
+                        <form method="get" action="{{route('front.searchRes')}}">
+                            <input name='cari' type="text" class="form-control" placeholder="Seblak, Basreng, Bakso, dll">
+                            <button type="submit"><i class="icon_search"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>

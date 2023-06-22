@@ -9,7 +9,7 @@
                             <div class="strip">
                                 <figure>
                                     <img src={{asset('storage/product/' . $product->product_img)}} data-src={{asset('storage/product/' . $product->product_img)}} class="img-fluid lazy" alt="">
-                                    <a href="detail-restaurant.html" class="strip_info">
+                                    <a href="{{route('front.catalog', ['slug' => $product->toko->slug])}}" class="strip_info">
                                         <small>Rp. {{number_format($product->price, 0, ',', '.')}}</small>
                                         <div class="item_title">
                                             <h3>{{$product->name}}</h3>

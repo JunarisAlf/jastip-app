@@ -27,6 +27,18 @@ class FrontController extends Controller
         $cabang = Cabang::all();
         return view('pages.customer.search-result', ['ads' => $ads, 'cabang' => $cabang, 'products' => $products]);
     }
+    public function cabangRes(Request $req){
+        $query = $req->id;
+        $products = [];
+        if($query == null){
+            $products = Product::all();
+        }else{
+            $products = Cabang::with('tokos.products')->find($query)->tokos->flatMap->products;
+        }
+        $ads = Ads::where('is_active', true)->get();
+        $cabang = Cabang::all();
+        return view('pages.customer.cabang-result', ['ads' => $ads, 'cabang' => $cabang, 'products' => $products]);
+    }
     public function catalog(Request $req){
         $toko = Toko::with('products')->where('slug', $req->slug)->firstOrFail();
         return view('pages.customer.catalog', ['toko' => $toko]);

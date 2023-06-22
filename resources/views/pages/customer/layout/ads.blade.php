@@ -10,7 +10,9 @@
                 <div class="item">
                     <div class="strip">
                         <figure>
-                            <img src={{asset('storage/iklan') . '/' . $ad->banner_img}} class="owl-lazy" alt="" width="460" height="310">
+                            <a href="{{$ad->link}}">
+                                <img src={{asset('storage/iklan') . '/' . $ad->banner_img}} class="owl-lazy" alt="" width="460" height="310">
+                            </a>
                         </figure>
                     </div>
                 </div>

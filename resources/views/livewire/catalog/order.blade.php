@@ -28,10 +28,7 @@
                 
             </ul>
             <ul class="clearfix">
-                <li>Harga<span>{{number_format($total, 0, ',', '.') }}</span></li>
-                <li>Ongkir<span>$10</span></li>
-                <li>Pelayanan<span>$10</span></li>
-                <li class="total">Total<span>$66</span></li>
+                <li class="total">Total<span>{{number_format($total, 0, ',', '.') }}</span></li>
             </ul>
             <div class="btn_1_mobile">
                 <a href="order.html" class="btn_1 gradient full-width mb_5">Next</a>
@@ -42,5 +39,5 @@
         
     </div>
     <!-- /box_order -->
-    <div class="btn_reserve_fixed"><a href="#0" class="btn_1 gradient full-width">View Basket</a></div>
+    <div class="btn_reserve_fixed"><a href="#0" class="btn_1 gradient full-width">Lihat Order</a></div>
 </div>

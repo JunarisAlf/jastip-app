@@ -8,7 +8,7 @@
 @section('content')
 @include('pages.customer.layout.header')
 
-<main>
+<main style="overflow: hidden">
     @include('pages.customer.layout.catalog-hero')
     @include('pages.customer.layout.catalog-item')
     @include('pages.customer.layout.footer')
@@ -21,6 +21,12 @@
 @section('js')
     @livewireScripts
     <script src={{asset('vendor/themplate/js/specific_detail.js')}}></script>
+    <script>
+        function toggle(){
+            const modal = document.getElementById('modal-dialog');
+            modal.classList.remove('display-none');
+        }
+    </script>
 @endsection
 
 @section('css')

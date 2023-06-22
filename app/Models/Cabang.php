@@ -18,4 +18,7 @@ class Cabang extends Model
     public function kurirs(){
         return $this->hasMany(Kurir::class, 'cabang_id', 'id');
     }
+    public function tokos(){
+        return $this->hasMany(Toko::class, 'cabang_id', 'id');
+    }
 }
