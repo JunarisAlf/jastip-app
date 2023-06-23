@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(TokoSeeder::class);
         $this->call(ProductSeeder::class);
         $this->call(AdsSeeder::class);
+        $this->call(OrderSeeder::class);
+
 
     }
 }
