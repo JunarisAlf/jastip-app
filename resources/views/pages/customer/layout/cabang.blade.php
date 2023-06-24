@@ -11,7 +11,7 @@
                     <ul>
                         @foreach ($cabang as $cb)
                         <li>
-                            <a href="detail-restaurant.html" >
+                            <a href="{{route('front.cabangRes', ['id' => $cb->id])}}" >
                                 <figure>
                                     <img src={{asset('storage/cabang') . '/' . rand(1,7) .'.jpg'}}  alt="" class="lazy" width="350" height="233">
                                 </figure>

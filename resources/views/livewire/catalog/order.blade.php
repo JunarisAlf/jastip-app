@@ -31,7 +31,7 @@
                 <li class="total">Total<span>{{number_format($total, 0, ',', '.') }}</span></li>
             </ul>
             <div class="btn_1_mobile">
-                <a href="order.html" class="btn_1 gradient full-width mb_5">Next</a>
+                <a href="#" class="btn_1 gradient full-width mb_5" wire:click="next">Next</a>
                 {{-- <div class="text-center"><small>Setelah in</small></div> --}}
             </div>
             </div>

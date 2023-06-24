@@ -16,7 +16,7 @@
 		        	<div class="box_order_form">
 		                <div class="head text-center">
 		                    <h3>Menunggu Konfirmasi Admin</h3>
-		                    Jika pesanan anda lama diproses <a href="https://wa.me/62822">hubungi admin</a>
+		                    Jika pesanan anda lama diproses <a href="{{"https://wa.me/". session()->get('wa_number')}}" target="_blank">hubungi admin</a>
 		                </div>
 		                <!-- /head -->
 		                <div class="main">

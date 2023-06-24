@@ -50,7 +50,7 @@ Route::get('/item', [FrontController::class, 'searchRes'])->name('front.searchRe
 Route::get('/cabang', [FrontController::class, 'cabangRes'])->name('front.cabangRes');
 Route::get('/toko/{slug}', [FrontController::class, 'catalog'])->name('front.catalog');
 Route::get('/order', [FrontController::class, 'order'])->name('front.order');
-Route::get('/confirm', [FrontController::class, 'confirm'])->name('front.confirm');
+Route::get('/order-success', [FrontController::class, 'confirm'])->name('front.orderSuccess');
 
 
 

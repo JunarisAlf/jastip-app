@@ -6,8 +6,7 @@
 @section('content')
 
 @include('pages.customer.layout.header')
-<main>
-   
+<main style="padding-top: 30px">
     @include('pages.customer.layout.search-item', ['products' => $products])
     @include('pages.customer.layout.ads')
     @include('pages.customer.layout.cabang')

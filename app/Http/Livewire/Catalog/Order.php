@@ -27,7 +27,10 @@ class Order extends Component
             }
             $this->emit('counter_changed',$id, $this->orders); 
         }
-        
+    }
+    public function next(){
+        session()->put('orders', $this->orders);
+        redirect()->route('front.order');
     }
     public function render()  {
         return view('livewire.catalog.order');
