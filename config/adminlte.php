@@ -351,10 +351,8 @@ return [
         ],
         [
             'text' => 'Setting',
-            'url'  => '/setting',
             'icon' => 'fas fa-cog',
-            'can'  => 'superadmin',
-
+            'route' => 'admin.setting',
         ],
 
         

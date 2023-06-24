@@ -8,6 +8,7 @@ use App\Http\Controllers\DashbaordController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\KurirController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TokoController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,8 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
     Route::middleware('superadmin')->group(function(){
         Route::get('/cabang', [CabangController::class, 'index'])->name('admin.cabang');
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.admin');
+        Route::get('/setting', [SettingController::class, 'index'])->name('admin.setting');
+
     });
     Route::get('/kurir', [KurirController::class, 'index'])->name('admin.kurir');
     Route::get('/toko', [TokoController::class, 'index'])->name('admin.toko');
