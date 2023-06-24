@@ -17,7 +17,7 @@ class TokoSeeder extends Seeder
             'name'          => 'Toko A1',
             'slug'          => 'toko_a1',
             'description'   => 'Deskripsi Toko',
-            'wa_number'     => '6282298097',
+            'wa_number'     => '6282284393018',
             'address'       => 'Jl. Durian N0. 10',
             'lat'           => 0.5270575138427904,
             'long'          => 101.4200681601453,

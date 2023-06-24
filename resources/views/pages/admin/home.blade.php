@@ -8,7 +8,6 @@
             Selamat datang {{ Auth::user()->full_name }}
         </x-adminlte-alert>
     @endif
-    @livewire('alert.simple-alert')
     <h1>Dashboard</h1>
 @stop
 
@@ -33,14 +32,14 @@
 
         <div class="row mt-4">
             <div class="col-12 col-md-6">
-                <x-adminlte-card title="Daftar Hutang" theme="warning" icon="fas fa-wallet">
-                    {{-- @livewire('home.debt-list', ['hutang' => $hutang]) --}}
-                </x-adminlte-card>
+                {{-- <x-adminlte-card title="Daftar Hutang" theme="warning" icon="fas fa-wallet">
+                    @livewire('home.debt-list', ['hutang' => $hutang])
+                </x-adminlte-card> --}}
             </div>
             <div class="col-12 col-md-6">
-                <x-adminlte-card title="Angsuran bulan ini" theme="dark" icon="fas fa-th-list">
-                    {{-- @livewire('home.incoming-layaway', compact('angsuran')) --}}
-                </x-adminlte-card>
+                {{-- <x-adminlte-card title="Angsuran bulan ini" theme="dark" icon="fas fa-th-list">
+                    @livewire('home.incoming-layaway', compact('angsuran'))
+                </x-adminlte-card> --}}
             </div>
         </div>
     </div>

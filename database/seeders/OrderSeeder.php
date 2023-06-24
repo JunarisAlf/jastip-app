@@ -41,6 +41,33 @@ class OrderSeeder extends Seeder
                 'total'             => 20_000
             ]
             ]);
-       
+
+            $order = Order::create([
+                'customer_name'     => 'Fulan',
+                'customer_wa'       => '6282284393018',
+                'customer_address'  => 'Jl. dfsfsdf',
+                'lat'               => 10.35345253,
+                'long'              => 4.342525532,
+                'price'             => 50_000,
+                'app_fee'           => 3_000,
+                'courir_fee'        => 4_000,
+                'cabang_id'         => 1,
+                'status'            => 'created'
+            ]);
+    
+            $order->items()->createMany([
+                [
+                    'product_id'        => 1,
+                    'qty'               => 2,
+                    'price'             => 15_000,
+                    'total'             => 30_000
+                ],
+                [
+                    'product_id'        => 2,
+                    'qty'               => 1,
+                    'price'             => 20_000,
+                    'total'             => 20_000
+                ]
+                ]);
     }
 }

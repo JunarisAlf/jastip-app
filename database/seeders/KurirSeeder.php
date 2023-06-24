@@ -19,7 +19,7 @@ class KurirSeeder extends Seeder
             'address_now'   => 'Jl. Semangka No. 5, Sukajadi, Pekanbaru',
             'profile_img'   => 'profile_kurir_example.jpg',
             'ktp_img'       => 'ktp_kurir_example.jpg',
-            'wa_number'     => '6292210002000',
+            'wa_number'     => '6282284393018',
             'cabang_id'     => 1,
         ]);
         Kurir::create([

@@ -7,6 +7,7 @@ use App\Http\Controllers\CabangController;
 use App\Http\Controllers\DashbaordController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\KurirController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TokoController;
@@ -46,6 +47,8 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
     Route::get('/toko', [TokoController::class, 'index'])->name('admin.toko');
     Route::get('/toko/{toko}/produk', [ProductController::class, 'index'])->name('admin.product');
     Route::get('/iklan', [AdsController::class, 'index'])->name('admin.ads');
+    Route::get('/order', [OrderController::class, 'index'])->name('admin.order');
+
 });
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');

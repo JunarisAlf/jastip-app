@@ -311,8 +311,9 @@ return [
         ['header' => 'MENU'],
         [
             'text' => 'Order',
-            'url'  => '/pesanan',
+            'route'=> 'admin.order',
             'icon' => 'fas fa-receipt',
+            'can'  => 'admin',
         ],
         [
             'text' => 'Toko',
