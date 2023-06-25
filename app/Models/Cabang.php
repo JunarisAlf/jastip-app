@@ -22,6 +22,6 @@ class Cabang extends Model
         return $this->hasMany(Toko::class, 'cabang_id', 'id');
     }
     public function orders(){
-        return $this->hasMany(Order::class, 'order_id', 'id');
+        return $this->hasMany(Order::class, 'cabang_id', 'id');
     }
 }

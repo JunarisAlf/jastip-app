@@ -9,6 +9,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\KurirController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TokoController;
 use Illuminate\Support\Facades\Route;
@@ -42,12 +43,16 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.admin');
         Route::get('/setting', [SettingController::class, 'index'])->name('admin.setting');
 
+
     });
     Route::get('/kurir', [KurirController::class, 'index'])->name('admin.kurir');
     Route::get('/toko', [TokoController::class, 'index'])->name('admin.toko');
     Route::get('/toko/{toko}/produk', [ProductController::class, 'index'])->name('admin.product');
     Route::get('/iklan', [AdsController::class, 'index'])->name('admin.ads');
     Route::get('/order', [OrderController::class, 'index'])->name('admin.order');
+    Route::get('/laporan-admin', [ReportController::class, 'admin'])->name('admin.admin_report');
+    Route::get('/laporan-kurir', [ReportController::class, 'courir'])->name('admin.courir_report');
+
 
 });
 

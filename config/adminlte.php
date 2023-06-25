@@ -337,11 +337,23 @@ return [
             'can'  => 'superadmin',
             'icon' => 'fas fa-user',
         ],
-
+        [
+            'header' => 'LAPORAN',
+        ],
+        [
+            'text' => 'Laporan Admin',
+            'route' => 'admin.admin_report',
+            'icon' => 'fas fa-scroll',
+        ],
+        [
+            'text' => 'Laporan Kurir',
+            'icon' => 'fas fa-sticky-note',
+            'route' => 'admin.courir_report',
+            'can'  => 'admin',
+        ],
         [
             'header' => 'OTHER',
             'can'  => 'superadmin',
-
         ],
         [
             'text' => 'Iklan',
@@ -407,6 +419,46 @@ return [
     */
 
     'plugins' => [
+        'TempusDominusBs4' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/moment/moment.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css',
+                ],
+            ],
+        ],
+        'DateRangePicker' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/moment/moment.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/daterangepicker/daterangepicker.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/daterangepicker/daterangepicker.css',
+                ],
+            ],
+        ],
         'Datatables' => [
             'active' => false,
             'files' => [

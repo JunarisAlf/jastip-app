@@ -21,6 +21,7 @@ class User extends Authenticatable
     public function cabang(){
         return $this->belongsTo(Cabang::class, 'cabang_id', 'id');
     }
+    
     protected function password(): Attribute{
         return Attribute::make(
             set: fn(string $password) => Hash::make($password)
