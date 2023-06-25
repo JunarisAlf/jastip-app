@@ -12,37 +12,37 @@
 @stop
 
 @section('content')
-    <div class="container">
+    @if (auth()->user()->role == 'superadmin')
         <div class="row">
-            
+            <div class="col-lg-3 col-5">
+                <x-adminlte-small-box title="{{$cabang}}" text="Cabang" icon="fas fa-route " theme="info" url="#" />
+            </div>
+            <div class="col-lg-3 col-5">
+                <x-adminlte-small-box title="{{$kurir}}" text="Kurir" icon="fas fa-motorcycle" theme="success" url="#" />
+            </div>
+            <div class="col-lg-3 col-5">
+                <x-adminlte-small-box title="{{$toko}}" text="Toko" icon="fas fa-store " theme="warning" url="#" />
+            </div>   
+            <div class="col-lg-3 col-5">
+                <x-adminlte-small-box title="{{$produk}}" text="Produk" icon="fas fa-boxes" theme="danger" url="#" />
+            </div> 
         </div>
-        <div class="row">
-            @unless (Auth::user()->role == 'admin')
-            <div class="col-12 col-sm-6 col-md-6">
-                <x-adminlte-info-box title="Uang Masuk" text="Rp."
-                    icon="fas fa-lg fa-sign-in-alt text-success" theme="gradient-success" icon-theme="white" />
-            </div>
-            <div class="col-12 col-sm-6 col-md-6">
-                <x-adminlte-info-box title="Uang Keluar" text="Rp. "
-                    icon="fas fa-lg fa-sign-out-alt text-info" theme="gradient-info" icon-theme="white" />
-            </div>
-            @endunless
-           
+    @endif
+    <div class="row">
+        <div class="col-lg-3 col-5">
+            <x-adminlte-info-box title="Rp {{number_format( $transaksi, 0, ',', '.')}}" text="Transaksi" icon="fas fa-lg fa-user-plus text-primary" theme="gradient-primary" icon-theme="white"/>
         </div>
-
-        <div class="row mt-4">
-            <div class="col-12 col-md-6">
-                {{-- <x-adminlte-card title="Daftar Hutang" theme="warning" icon="fas fa-wallet">
-                    @livewire('home.debt-list', ['hutang' => $hutang])
-                </x-adminlte-card> --}}
-            </div>
-            <div class="col-12 col-md-6">
-                {{-- <x-adminlte-card title="Angsuran bulan ini" theme="dark" icon="fas fa-th-list">
-                    @livewire('home.incoming-layaway', compact('angsuran'))
-                </x-adminlte-card> --}}
-            </div>
+        <div class="col-lg-3 col-5">
+            <x-adminlte-info-box title="Rp {{number_format( $courir_fee, 0, ',', '.')}}" text="FEE Kurir" icon="fas fa-lg fa-user-plus text-primary" theme="gradient-primary" icon-theme="white"/>
         </div>
+        <div class="col-lg-3 col-5">
+            <x-adminlte-info-box title="Rp {{number_format( $app_fee, 0, ',', '.')}}" text="FEE Aplikasi" icon="fas fa-lg fa-user-plus text-primary" theme="gradient-primary" icon-theme="white"/>
+        </div>   
+        <div class="col-lg-3 col-5">
+            <x-adminlte-info-box title="{{$order}}" text="Order" icon="fas fa-lg fa-user-plus text-primary" theme="gradient-primary" icon-theme="white"/>
+        </div> 
     </div>
+    
 @stop
 
 {{-- @section('plugins.TempusDominusBs4', true) --}}
