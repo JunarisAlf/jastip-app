@@ -74,6 +74,7 @@ class Modal extends Component
     public function done(){
         $order = Order::find($this->order_id);
         $order->status = 'processed';
+        $order->courir_id = $this->kurir_id;
         $order->save();
         $this->show = 'hidden';
         $this->emit('refresh_table');

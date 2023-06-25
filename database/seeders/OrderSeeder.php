@@ -26,6 +26,7 @@ class OrderSeeder extends Seeder
             'courir_fee'        => 4_000,
             'cabang_id'         => 1,
             'status'            => 'done',
+            'courir_id'         => 1,
             'created_at'        => Carbon::now()->subDay(2)->format('Y-m-d H:i:s'),
             'updated_at'        => Carbon::now()->subDay(2)->format('Y-m-d H:i:s'),
 
@@ -57,6 +58,7 @@ class OrderSeeder extends Seeder
                 'courir_fee'        => 4_000,
                 'cabang_id'         => 1,
                 'status'            => 'done',
+                'courir_id'         => 1,
                 'created_at'        => Carbon::now()->subDay(2)->format('Y-m-d H:i:s'),
                 'updated_at'        => Carbon::now()->subDay(2)->format('Y-m-d H:i:s'),
             ]);
@@ -87,6 +89,7 @@ class OrderSeeder extends Seeder
                     'courir_fee'        => 4_000,
                     'cabang_id'         => 1,
                     'status'            => 'done',
+                    'courir_id'         => 1,
                     'created_at'        => Carbon::now()->subDay(1)->format('Y-m-d H:i:s'),
                     'updated_at'        => Carbon::now()->subDay(1)->format('Y-m-d H:i:s'),
                 ]);
@@ -117,6 +120,7 @@ class OrderSeeder extends Seeder
                     'courir_fee'        => 4_000,
                     'cabang_id'         => 1,
                     'status'            => 'done',
+                    'courir_id'         => 2,
                     'created_at'        => Carbon::now()->subDay(1)->format('Y-m-d H:i:s'),
                     'updated_at'        => Carbon::now()->subDay(1)->format('Y-m-d H:i:s'),
                 ]);
@@ -140,6 +144,7 @@ class OrderSeeder extends Seeder
                     'courir_fee'        => 4_000,
                     'cabang_id'         => 1,
                     'status'            => 'done',
+                    'courir_id'         => 2,
                     'created_at'        => Carbon::now()->format('Y-m-d H:i:s'),
                     'updated_at'        => Carbon::now()->format('Y-m-d H:i:s'),
                 ]);
@@ -172,6 +177,7 @@ class OrderSeeder extends Seeder
                     'courir_fee'        => 4_000,
                     'cabang_id'         => 2,
                     'status'            => 'done',
+                    'courir_id'         => 3,
                     'created_at'        => Carbon::now()->subDay(2)->format('Y-m-d H:i:s'),
                     'updated_at'        => Carbon::now()->subDay(2)->format('Y-m-d H:i:s'),
         
@@ -197,6 +203,7 @@ class OrderSeeder extends Seeder
                         'courir_fee'        => 4_000,
                         'cabang_id'         => 2,
                         'status'            => 'done',
+                        'courir_id'         => 4,
                         'created_at'        => Carbon::now()->subDay(2)->format('Y-m-d H:i:s'),
                         'updated_at'        => Carbon::now()->subDay(2)->format('Y-m-d H:i:s'),
                     ]);
@@ -222,6 +229,7 @@ class OrderSeeder extends Seeder
                             'courir_fee'        => 4_000,
                             'cabang_id'         => 2,
                             'status'            => 'done',
+                            'courir_id'         => 4,
                             'created_at'        => Carbon::now()->subDay(1)->format('Y-m-d H:i:s'),
                             'updated_at'        => Carbon::now()->subDay(1)->format('Y-m-d H:i:s'),
                         ]);
@@ -246,6 +254,7 @@ class OrderSeeder extends Seeder
                             'courir_fee'        => 4_000,
                             'cabang_id'         => 2,
                             'status'            => 'done',
+                            'courir_id'         => 4,
                             'created_at'        => Carbon::now()->subDay(1)->format('Y-m-d H:i:s'),
                             'updated_at'        => Carbon::now()->subDay(1)->format('Y-m-d H:i:s'),
                         ]);
@@ -269,6 +278,7 @@ class OrderSeeder extends Seeder
                             'courir_fee'        => 4_000,
                             'cabang_id'         => 2,
                             'status'            => 'done',
+                            'courir_id'         => 4,
                             'created_at'        => Carbon::now()->format('Y-m-d H:i:s'),
                             'updated_at'        => Carbon::now()->format('Y-m-d H:i:s'),
                         ]);

@@ -15,4 +15,7 @@ class Kurir extends Model
     public function cabang(){
         return $this->belongsTo(Cabang::class, 'cabang_id', 'id');
     }
+    public function orders(){
+        return $this->hasMany(Order::class, 'courir_id', 'id');
+    }
 }

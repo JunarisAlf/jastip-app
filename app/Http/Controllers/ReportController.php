@@ -10,6 +10,6 @@ class ReportController extends Controller
         return view('pages.admin.admin-report');
     }
     public function courir(){
-        
+        return view('pages.admin.courir-report');
     }
 }

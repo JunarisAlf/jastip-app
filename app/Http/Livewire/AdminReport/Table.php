@@ -19,11 +19,11 @@ class Table extends Component
         // $this->date_range = $this->date_start . '|' . $this->date_end;
         if(auth()->user()->role == 'superadmin'){
             $this->cabangs = Cabang::with(['orders' => function ($query) {
-                $query->whereDate('created_at', '>=', $this->date_start)->whereDate('created_at', '<=', $this->date_end);
+                $query->where('status', 'done')->whereDate('created_at', '>=', $this->date_start)->whereDate('created_at', '<=', $this->date_end);
             }])->get();
         }else{
             $this->cabangs = Cabang::with(['orders' => function ($query) {
-                $query->whereDate('created_at', '>=', $this->date_start)->whereDate('created_at', '<=', $this->date_end);
+                $query->where('status', 'done')->whereDate('created_at', '>=', $this->date_start)->whereDate('created_at', '<=', $this->date_end);
             }])->find(auth()->user()->id);
         }
     }
@@ -35,11 +35,11 @@ class Table extends Component
         $date_end = $date[1];
         if(auth()->user()->role == 'superadmin'){
             $this->cabangs = Cabang::with(['orders' => function ($query) use ($date_start, $date_end) {
-                $query->whereDate('created_at', '>=', $date_start)->whereDate('created_at', '<=', $date_end);
+                $query->where('status', 'done')->whereDate('created_at', '>=', $date_start)->whereDate('created_at', '<=', $date_end);
             }])->get();
         }else{
             $this->cabangs = Cabang::with(['orders' => function ($query) use ($date_start, $date_end) {
-                $query->whereDate('created_at', '>=', $date_start)->whereDate('created_at', '<=', $date_end);
+                $query->where('status', 'done')->whereDate('created_at', '>=', $date_start)->whereDate('created_at', '<=', $date_end);
             }])->find(auth()->user()->id);
         }
     }

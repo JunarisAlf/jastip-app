@@ -25,6 +25,11 @@ return new class extends Migration
                   ->constrained('cabangs', 'id', 'order_cabang')
                   ->restrictOnUpdate()
                   ->restrictOnDelete();
+            $table->foreignId('courir_id')
+                  ->nullable()
+                  ->constrained('kurirs', 'id', 'courir_order')
+                  ->restrictOnUpdate()
+                  ->restrictOnDelete();
             $table->enum('status', ['created', 'processed', 'done']);
             $table->timestamps();
         });

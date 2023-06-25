@@ -19,6 +19,7 @@ return new class extends Migration
                   ->constrained('products', 'id', 'product_order')
                   ->restrictOnUpdate()
                   ->restrictOnDelete();
+            
             $table->integer('qty');
             $table->integer('price');
             $table->integer('total');
