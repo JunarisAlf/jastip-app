@@ -15,6 +15,12 @@ class Table extends Component
     public function proccess($id){
         $this->emit('proccess', $id);
     }
+    public function done($id){
+        $order = Order::find($id);
+        $order->status = 'done';
+        $order->save();
+        $this->emit('refresh_table');
+    }
     public function mount(){
         $user = auth()->user();
         $this->orders = Order::with('items')->where('status', '!=','done')->get();

@@ -53,6 +53,9 @@
                         @if ($order->status == 'created')
                             <x-adminlte-button label="Prosess" class="btn-sm" theme="info" icon=" fas fa-arrow-alt-circle-right"
                             wire:click="proccess('{{$order->id}}')"/>
+                        @elseif ($order->status == 'processed')
+                            <x-adminlte-button label="Selesai" class="btn-sm" theme="success" icon=" fas fa-check"
+                            wire:click="done('{{$order->id}}')"/>
                         @else
                             <x-adminlte-button disabled label="Prosess" class="btn-sm" theme="info" icon="fas fa-arrow-alt-circle-right" wire:click="proccess('{{$order->id}}')"/>
                         @endif
