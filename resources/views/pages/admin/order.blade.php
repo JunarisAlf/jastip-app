@@ -31,4 +31,12 @@
 
 @section('js')
     @livewireScripts
+    <script>
+        let bell = new Audio('/bell.mp3')
+        Livewire.on('ring_bell', () => {
+            // Perform your specific action here
+            bell.play();
+            console.log('Data refreshed');
+        });
+    </script>
 @stop

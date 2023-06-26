@@ -1,4 +1,4 @@
-<div>
+<div wire:poll.5000ms="ring">
     <div class="table-responsive">
     <table class="table table-bordered" style="min-width: 100%">
         <thead>
@@ -59,7 +59,6 @@
                         @else
                             <x-adminlte-button disabled label="Prosess" class="btn-sm" theme="info" icon="fas fa-arrow-alt-circle-right" wire:click="proccess('{{$order->id}}')"/>
                         @endif
-                        
                     </td>
                 </tr>
             @endforeach

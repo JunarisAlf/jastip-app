@@ -8,9 +8,11 @@ use Livewire\Component;
 class Table extends Component
 {
     public $orders = [];
-    protected $listeners = ['refresh_table' => 'refresh'];
+    protected $listeners = ['refresh_table' => 'refresh', 'ring_bell' => 'ringBell'];
+    public function ringBell(){}
     public function refresh(){
-        $this->orders = Order::with('items')->where('status', '!=','done')->get();
+        $user = auth()->user();
+        $this->orders = Order::with('items')->where('status', '!=','done')->where('cabang_id', $user->cabang->id)->get();
     }
     public function proccess($id){
         $this->emit('proccess', $id);
@@ -23,8 +25,17 @@ class Table extends Component
     }
     public function mount(){
         $user = auth()->user();
-        $this->orders = Order::with('items')->where('status', '!=','done')->get();
-        
+        $this->orders = Order::with('items')->where('status', '!=','done')->where('cabang_id', $user->cabang->id)->get();
+    }
+    public function ring(){
+        $user = auth()->user();
+        $this->orders = Order::with('items')->where('status', '!=','done')->where('cabang_id', $user->cabang->id)->get();
+        $isNewOrder = $this->orders->contains(function ($order) {
+            return $order->status === 'created';
+        });
+        if($isNewOrder){
+            $this->emit('ring_bell');
+        }
     }
     public function render(){
         return view('livewire.order.table');
