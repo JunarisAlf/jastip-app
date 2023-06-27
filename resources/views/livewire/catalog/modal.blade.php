@@ -7,7 +7,7 @@
         <div class="numbers-row">
             <div wire:click="inc" class="inc button_inc">+</div>
             <div wire:click="dec" class="dec button_inc">-</div>
-            <input type="number"  class="qty2 form-control" name="qty" wire:model="qty" >
+            <input disabled type="number"  class="qty2 form-control" name="qty" wire:model="qty" style="background-color: rgba(0, 0, 0, 0)" >
         </div>
     </div>
     <div class="footer">

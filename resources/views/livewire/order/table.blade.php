@@ -1,4 +1,4 @@
-<div wire:poll.5000ms="ring">
+<div wire:poll.10000ms="ring">
     <div class="table-responsive">
     <table class="table table-bordered" style="min-width: 100%">
         <thead>
