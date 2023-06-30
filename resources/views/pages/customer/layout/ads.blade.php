@@ -1,5 +1,5 @@
 <div class="bg_white">
-    <div class="container margin_60">
+    <div class="container">
         <div class="main_title">
             <span><em></em></span>
             <h2>Rekomendasi</h2>

@@ -2,7 +2,7 @@
     <div class="container">
         <div id="logo">
             <a href="/">
-                <img src="{{asset('sobatkurir.png')}}" width="200" height="80" alt="">
+                <img src="{{asset('sobatkurir.png')}}" width="200" height="70" alt="">
             </a>
         </div>
         <div class="layer"></div>

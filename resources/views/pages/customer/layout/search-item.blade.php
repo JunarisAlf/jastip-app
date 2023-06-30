@@ -13,7 +13,8 @@
                                         <small>Rp. {{number_format($product->price, 0, ',', '.')}}</small>
                                         <div class="item_title">
                                             <h3>{{$product->name}}</h3>
-                                            <small>{{$product->toko->name}}</small>
+                                            <small>{{$product->toko->name}}</small><br>
+                                            <small>{{$product->toko->cabang->name}}</small>
                                         </div>
                                     </a>
                                 </figure>
