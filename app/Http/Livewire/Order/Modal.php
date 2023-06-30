@@ -13,7 +13,7 @@ class Modal extends Component
     public $show = 'hidden';
     public $order_id;
     public $kurirs = [];
-    public $kurir_id, $courir_wa;
+    public $kurir_id, $courir_wa, $toko_wa, $customer_wa;
     public $isChatDone = false, $counter = 0;
     public $tokoMsg, $kurirMsg, $customerMsg;
     public function mount(){
@@ -49,9 +49,11 @@ class Modal extends Component
         $toko_maps = "https://www.google.com/maps/search/?api=1&query=" . $toko->lat . ',' . $toko->long;
         $toko_address = $toko->address;
         $toko_wa = $toko->wa_number;
+        $this->toko_wa = $toko_wa;
 
         $customer_name = $order->customer_name;
         $customer_wa = $order->customer_wa;
+        $this->customer_wa = $customer_wa;
         $customer_address = $order->customer_address;
         $customer_maps = "https://www.google.com/maps/search/?api=1&query=" . $order->lat . ',' . $order->long;
 

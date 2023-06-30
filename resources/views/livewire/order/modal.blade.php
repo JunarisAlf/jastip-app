@@ -28,7 +28,7 @@
                     </a>
                 </div>
                 <div class="form-group">
-                    <a href={{"https://wa.me/$courir_wa?text=$tokoMsg"}} target="_blank">
+                    <a href={{"https://wa.me/$toko_wa?text=$tokoMsg"}} target="_blank">
                         @if ($counter >= 1)
                             <x-adminlte-button  wire:click="sendMsg" label="Kirim Pesan Ke Toko" theme="success" class="btn-block" icon="fab fa-whatsapp"/>
                         @else
@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group">
                     
-                    <a href={{"https://wa.me/$courir_wa?text=$customerMsg"}} target="_blank">
+                    <a href={{"https://wa.me/$customer_wa?text=$customerMsg"}} target="_blank">
                         @if ($counter >= 2)
                             <x-adminlte-button  wire:click="sendMsg" label="Kirim Pesan Ke Customer" theme="success" class="btn-block" icon="fab fa-whatsapp"/>
                         @else
