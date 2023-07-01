@@ -348,7 +348,7 @@ return [
         [
             'text' => 'Laporan Kurir',
             'icon' => 'fas fa-sticky-note',
-            'route' => 'admin.courir_report',
+            'route' => 'admin.courir_report',   
             'can'  => 'admin',
         ],
         [
@@ -356,11 +356,22 @@ return [
             'can'  => 'superadmin',
         ],
         [
+            'text' => 'Topup',
+            'route' => 'admin.adminTopup',
+            'icon' => 'fas fa-money-bill',
+            'can'  => 'superadmin',
+        ],
+        [
+            'text' => 'Topup',
+            'route' => 'admin.kurirTopup',
+            'icon' => 'fas fa-money-bill',
+            'can'  => 'admin',
+        ],
+        [
             'text' => 'Iklan',
             'route' => 'admin.ads',
             'icon' => 'fas fa-dollar-sign',
             'can'  => 'superadmin',
-
         ],
         [
             'text' => 'Setting',

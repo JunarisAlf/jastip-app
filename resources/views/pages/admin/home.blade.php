@@ -29,17 +29,22 @@
         </div>
     @endif
     <div class="row">
+        <div class="col-lg-12 col-5">
+            <x-adminlte-info-box title="Rp {{number_format( $topup, 0, ',', '.')}}" text="Pendapatan Topup Bulan Ini" icon="fas fa-lg fa-dollar-sign text-primary" theme="gradient-primary" icon-theme="white"/>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-3 col-5">
-            <x-adminlte-info-box title="Rp {{number_format( $transaksi, 0, ',', '.')}}" text="Transaksi" icon="fas fa-lg fa-user-plus text-primary" theme="gradient-primary" icon-theme="white"/>
+            <x-adminlte-info-box title="Rp {{number_format( $transaksi, 0, ',', '.')}}" text="Transaksi" icon="fas fa-lg fa-money-bill-alt text-primary" theme="gradient-primary" icon-theme="white"/>
         </div>
         <div class="col-lg-3 col-5">
-            <x-adminlte-info-box title="Rp {{number_format( $courir_fee, 0, ',', '.')}}" text="FEE Kurir" icon="fas fa-lg fa-user-plus text-primary" theme="gradient-primary" icon-theme="white"/>
+            <x-adminlte-info-box title="Rp {{number_format( $courir_fee, 0, ',', '.')}}" text="Pendapatan Kurir" icon="fas fa-lg fa-motorcycle text-primary" theme="gradient-primary" icon-theme="white"/>
         </div>
         <div class="col-lg-3 col-5">
-            <x-adminlte-info-box title="Rp {{number_format( $app_fee, 0, ',', '.')}}" text="FEE Aplikasi" icon="fas fa-lg fa-user-plus text-primary" theme="gradient-primary" icon-theme="white"/>
+            <x-adminlte-info-box title="Rp {{number_format( $app_fee, 0, ',', '.')}}" text="Pendapatan Admin" icon="fas fa-lg fa-users text-primary" theme="gradient-primary" icon-theme="white"/>
         </div>   
         <div class="col-lg-3 col-5">
-            <x-adminlte-info-box title="{{$order}}" text="Order" icon="fas fa-lg fa-user-plus text-primary" theme="gradient-primary" icon-theme="white"/>
+            <x-adminlte-info-box title="{{$order}}" text="Order" icon="fas fa-lg fa-receipt text-primary" theme="gradient-primary" icon-theme="white"/>
         </div> 
     </div>
     

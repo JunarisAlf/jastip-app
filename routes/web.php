@@ -12,6 +12,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TokoController;
+use App\Http\Controllers\TopUpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,7 +43,7 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
         Route::get('/cabang', [CabangController::class, 'index'])->name('admin.cabang');
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.admin');
         Route::get('/setting', [SettingController::class, 'index'])->name('admin.setting');
-
+        Route::get('/admin-topup', [TopUpController::class, 'superadmin'])->name('admin.adminTopup');
 
     });
     Route::get('/kurir', [KurirController::class, 'index'])->name('admin.kurir');
@@ -52,7 +53,7 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
     Route::get('/order', [OrderController::class, 'index'])->name('admin.order');
     Route::get('/laporan-admin', [ReportController::class, 'admin'])->name('admin.admin_report');
     Route::get('/laporan-kurir', [ReportController::class, 'courir'])->name('admin.courir_report');
-
+    Route::get('/kurir-topup', [TopUpController::class, 'admin'])->name('admin.kurirTopup');
 
 });
 

@@ -21,6 +21,9 @@ class User extends Authenticatable
     public function cabang(){
         return $this->belongsTo(Cabang::class, 'cabang_id', 'id');
     }
+    public function topups(){
+        return $this->hasMany(TopUpHistory::class, 'user_id', 'id');
+    }
     
     protected function password(): Attribute{
         return Attribute::make(

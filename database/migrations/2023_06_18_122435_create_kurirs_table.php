@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('profile_img');
             $table->string('ktp_img');
             $table->string('wa_number');
+            $table->unsignedInteger('saldo')->default(0);
             $table->foreignId('cabang_id')
                   ->constrained('cabangs', 'id', 'kurir_cabang')
                   ->cascadeOnDelete()

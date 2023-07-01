@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('img_name')->nullable();
             $table->string('note')->nullable();
+            $table->unsignedInteger('saldo')->default(0);
             $table->foreignId('cabang_id')
                   ->nullable()
                   ->constrained('cabangs', 'id', 'admin_cabang')
