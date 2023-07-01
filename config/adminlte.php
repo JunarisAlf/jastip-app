@@ -377,6 +377,7 @@ return [
             'text' => 'Setting',
             'icon' => 'fas fa-cog',
             'route' => 'admin.setting',
+            'can'  => 'superadmin',
         ],
 
         

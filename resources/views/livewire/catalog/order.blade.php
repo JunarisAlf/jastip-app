@@ -6,7 +6,10 @@
                 Livewire.emit('setLoc', crd.latitude,crd.longitude )
             }
             function error(err) {
+                alert('Izinkan Akses Lokasi. Kami Memerlukan Akses Lokasi Kamu.')
+                window.location.href = '/';
                 console.warn(`ERROR(${err.code}): ${err.message}`);
+
             }
             if (navigator.geolocation) {
                 let coords = navigator.geolocation.getCurrentPosition(success, error);
