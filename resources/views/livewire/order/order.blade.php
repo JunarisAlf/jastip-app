@@ -81,7 +81,7 @@
                     
                     <ul class="clearfix">
                         <li>Harga<span>{{number_format($total, 0, ',', '.') }}</span></li>
-                        <li>Jasa Kurir<span>{{number_format($courir_fee, 0, ',', '.') }}</span></li>
+                        <li>Jasa Kurir <strong>({{$distance}} KM)</strong><span>{{number_format($courir_fee, 0, ',', '.') }}</span></li>
                         <li>Aplikasi<span>{{number_format($app_fee, 0, ',', '.') }}</span></li>
                         <li class="total">Total<span>{{number_format($grand_total, 0, ',', '.') }}</span></li>
                     </ul>

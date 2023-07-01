@@ -1,4 +1,21 @@
 <div class="col-lg-4" id="sidebar_fixed">
+    <script>
+        window.onload = function(){
+            function success(pos) {
+                const crd = pos.coords;
+                Livewire.emit('setLoc', crd.latitude,crd.longitude )
+            }
+            function error(err) {
+                console.warn(`ERROR(${err.code}): ${err.message}`);
+            }
+            if (navigator.geolocation) {
+                let coords = navigator.geolocation.getCurrentPosition(success, error);
+                console.log(coords)
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+    </script>
     <div class="box_order mobile_fixed">
         <div class="head">
             <h3>Pesanan Anda</h3>
@@ -40,4 +57,5 @@
     </div>
     <!-- /box_order -->
     <div class="btn_reserve_fixed"><a href="#0" class="btn_1 gradient full-width">Lihat Order</a></div>
+   
 </div>

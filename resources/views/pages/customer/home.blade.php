@@ -16,5 +16,5 @@
         @include('pages.customer.layout.cta')
         @include('pages.customer.layout.footer')
     </main>
-
+    
 @endsection

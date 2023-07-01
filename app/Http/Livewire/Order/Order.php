@@ -7,13 +7,14 @@ use App\Models\Order as ModelsOrder;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Toko;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
 use Livewire\Component;
 
 class Order extends Component
 {
     public $orders;
-    public $customer_name, $customer_wa, $customer_address, $lat, $long, $app_fee, $courir_fee, $total, $grand_total, $cabang_id, $order_items;
+    public $customer_name, $customer_wa, $customer_address, $lat, $long, $distance, $app_fee, $courir_fee, $total, $grand_total, $cabang_id, $order_items;
     public function mount(){
         $orders = session()->get('orders');
         if($orders == null || !isset($orders)){
@@ -24,6 +25,7 @@ class Order extends Component
         $courir_fee = Setting::where('key', 'courir_fee')->firstOrFail();
         $this->courir_fee = intval($courir_fee->value);
 
+        // orders
         $this->orders = [];
         $this->order_items = [];
         $harga = 0;
@@ -39,12 +41,27 @@ class Order extends Component
             ]);
 
         }
+
+        //dynamic fee
+        $loc = session()->get('location');
+        $customer_loc = $loc['long'] . ',' . $loc['lat'];
+        $toko = $this->orders[0]['item']->toko;
+        $toko_loc = $toko->long . ',' . $toko->lat;
+        if($loc == null || !isset($loc)){
+            return redirect()->route('front.index'); //error but work
+        }
+        $response = Http::get("https://api.mapbox.com/directions/v5/mapbox/driving/$toko_loc;$customer_loc?access_token=pk.eyJ1IjoianVuYXJpcyIsImEiOiJjbGpqb3Y1NzYwYW1xM2tvM2xjcm4xNHN0In0.U4XLQA7Snp1mIZsddqzwng");
+        $statusCode = $response->status();
+        $body = $response->json();
+        $this->distance = round($body['routes'][0]['distance']/1000, 1, PHP_ROUND_HALF_UP);
+        $rounded_distance = round($this->distance, 0, PHP_ROUND_HALF_UP);
+        $this->courir_fee = $rounded_distance * $this->courir_fee;
+        // harga
         $this->total = $harga;
         $this->grand_total = $harga + $this->app_fee + $this->courir_fee;
         $this->cabang_id = $this->orders[0]['item']->toko->id;
-
-
     }
+
     public function rules(){
         return [
             'customer_name'     => 'required|string',
@@ -64,6 +81,7 @@ class Order extends Component
         $order = ModelsOrder::create($validatedData);
         $order->items()->createMany($this->order_items);
         session()->forget('orders');
+        session()->forget('location');
         session()->put('wa_number', Cabang::find($this->cabang_id)->admins->first()->wa_number);
         redirect()->route('front.orderSuccess');
     }

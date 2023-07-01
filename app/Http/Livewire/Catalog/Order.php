@@ -6,9 +6,9 @@ use Livewire\Component;
 
 class Order extends Component
 {
-    protected $listeners = ['inc' => 'inc', 'dec' => 'dec'];
+    protected $listeners = ['inc' => 'inc', 'dec' => 'dec', 'setLoc' => 'setLoc'];
     public $orders = [];
-    
+    public $lat, $long;
     public function inc($id){
         if (array_key_exists($id, $this->orders)) {
             $this->orders[$id] += 1;
@@ -28,8 +28,14 @@ class Order extends Component
             $this->emit('counter_changed',$id, $this->orders); 
         }
     }
+    
+    public function setLoc($lat, $long){
+        $this->lat = $lat;
+        $this->long = $long;
+    }
     public function next(){
         session()->put('orders', $this->orders);
+        session()->put('location', ['lat' => $this->lat, 'long' => $this->long]);
         redirect()->route('front.order');
     }
     public function render()  {
