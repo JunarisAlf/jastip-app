@@ -16,11 +16,7 @@ class Modal extends Component
     public $kurir_id, $courir_wa, $toko_wa, $customer_wa;
     public $isChatDone = false, $counter = 0;
     public $tokoMsg, $kurirMsg, $customerMsg;
-    public function mount(){
-        $this->order_id = 
-        $user = auth()->user();
-        $this->kurirs = $user->cabang->kurirs;
-    }
+
     public function updated(){
         $kurir = Kurir::find($this->kurir_id);
         $kurir_name = $kurir->full_name;
@@ -89,8 +85,12 @@ class Modal extends Component
     }
     protected $listeners = ['proccess' => 'openModal'];
     public function openModal($id){
+        $user = auth()->user();
         $this->order_id = $id;
+        $order = Order::find($id);
+        $this->kurirs = $user->cabang->kurirs()->where('saldo', '>=', $order->app_fee)->get();
         $this->show = 'block';
+
     }
     public function render(){
         return view('livewire.order.modal');

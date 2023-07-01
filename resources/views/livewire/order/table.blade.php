@@ -54,8 +54,11 @@
                             <x-adminlte-button label="Prosess" class="btn-sm" theme="info" icon=" fas fa-arrow-alt-circle-right"
                             wire:click="proccess('{{$order->id}}')"/>
                         @elseif ($order->status == 'processed')
-                            <x-adminlte-button label="Selesai" class="btn-sm" theme="success" icon=" fas fa-check"
-                            wire:click="done('{{$order->id}}')"/>
+                            <a 
+                            href={{"https://wa.me/" . $order->kurir->wa_number ."?text=" . rawurlencode("*Order Selesai!*\nSisa Saldo:  Rp." .  number_format($order->kurir->saldo - $order->app_fee, 0, ',', '.'))}} target="_blank">
+                                <x-adminlte-button label="Selesai" class="btn-sm" theme="success" icon="fas fa-check"
+                                wire:click="done('{{$order->id}}')"/>
+                            </a>
                         @else
                             <x-adminlte-button disabled label="Prosess" class="btn-sm" theme="info" icon="fas fa-arrow-alt-circle-right" wire:click="proccess('{{$order->id}}')"/>
                         @endif

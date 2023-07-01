@@ -20,5 +20,8 @@ class Order extends Model
     public function cabang(){
         return $this->belongsTo(Cabang::class, 'cabang_id', 'id');
     }
+    public function kurir(){
+        return $this->belongsTo(Kurir::class, 'courir_id', 'id');
+    }
     use HasFactory;
 }

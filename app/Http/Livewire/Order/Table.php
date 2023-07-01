@@ -20,7 +20,11 @@ class Table extends Component
     public function done($id){
         $order = Order::find($id);
         $order->status = 'done';
+        $kurir = $order->kurir;
+        $kurir->saldo -= $order->app_fee;
+        $kurir->save();
         $order->save();
+
         $this->emit('refresh_table');
     }
     public function mount(){
