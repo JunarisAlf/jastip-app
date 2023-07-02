@@ -302,13 +302,22 @@ return [
         ],
 
         // Sidebar items:
-       
+        [
+            'text'        => 'Dashboard',
+            'route'       => 'courir.cekSaldo',
+            'icon'        => 'fa fa-home',
+            'can'         => 'guest'
+        ],
         [
             'text'        => 'Dashboard',
             'route'       => 'admin.home',
             'icon'        => 'fa fa-home',
+            'can'         => 'auth'
         ],
-        ['header' => 'MENU'],
+        [
+            'header' => 'MENU',
+            'can'    => 'auth'
+        ],
         [
             'text' => 'Order',
             'route'=> 'admin.order',
@@ -319,11 +328,13 @@ return [
             'text' => 'Toko',
             'route'=> 'admin.toko',
             'icon' => 'fas fa-store',
+            'can'  => 'auth'
         ],
         [
             'text' => 'Kurir',
             'route'=> 'admin.kurir',
             'icon' => 'fas fa-motorcycle',
+            'can'  => 'auth'
         ],
         [
             'text' => 'Cabang',
@@ -334,26 +345,28 @@ return [
         [
             'text' => 'Admin',
             'route'=> 'admin.admin',
-            'can'  => 'superadmin',
             'icon' => 'fas fa-user',
+            'can'  => 'superadmin',
         ],
         [
             'header' => 'LAPORAN',
+            'can'    => 'auth'
         ],
         [
-            'text' => 'Laporan Admin',
-            'route' => 'admin.admin_report',
-            'icon' => 'fas fa-scroll',
+            'text'      => 'Laporan Admin',
+            'route'     => 'admin.admin_report',
+            'icon'      => 'fas fa-scroll',
+            'can'         => 'auth'
         ],
         [
-            'text' => 'Laporan Kurir',
-            'icon' => 'fas fa-sticky-note',
-            'route' => 'admin.courir_report',   
-            'can'  => 'admin',
+            'text'      => 'Laporan Kurir',
+            'icon'      => 'fas fa-sticky-note',
+            'route'     => 'admin.courir_report',   
+            'can'       => 'admin',
         ],
         [
-            'header' => 'OTHER',
-            'can'  => 'superadmin',
+            'header'    => 'OTHER',
+            'can'       => 'superadmin',
         ],
         [
             'text' => 'Topup',
@@ -381,16 +394,21 @@ return [
         ],
 
         
-        ['header' => 'ACCOUNT'],
         [
-            'text' => 'change_password',
-            'route' => 'admin.changePassword',
-            'icon' => 'fas fa-fw fa-lock',
+            'header' => 'ACCOUNT',
+            'can'    => 'auth'    
         ],
         [
-            'text' => 'Log Out',
-            'route' => 'logout',
-            'icon' => 'fas fa-sign-out-alt',
+            'text'        => 'change_password',
+            'route'       => 'admin.changePassword',
+            'icon'        => 'fas fa-fw fa-lock',
+            'can'         => 'auth'
+        ],
+        [
+            'text'      => 'Log Out',
+            'route'     => 'logout',
+            'icon'      => 'fas fa-sign-out-alt',
+            'can'       => 'auth'
         ],
  
       

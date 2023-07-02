@@ -64,6 +64,8 @@ Route::get('/toko/{slug}', [FrontController::class, 'catalog'])->name('front.cat
 Route::get('/order', [FrontController::class, 'order'])->name('front.order');
 Route::get('/order-success', [FrontController::class, 'confirm'])->name('front.orderSuccess');
 
+// Kurir
+Route::get('/cek-saldo', [KurirController::class, 'cekSaldoPage'])->name('courir.cekSaldo');
 
 
 

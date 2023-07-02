@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
@@ -24,6 +25,16 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Gate::define('auth', function(){
+            if(Auth::check()){
+                return true;
+            }
+        });
+        Gate::define('guest', function(?User $user){
+            if($user == null){
+                return true;
+            }
+        });
         Gate::define('superadmin', function(User $user){
             if($user->role == 'superadmin'){
                 return true;
