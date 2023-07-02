@@ -81,5 +81,10 @@ figure{
    
 }
 
-
-/* modal */
+/* hero section */
+.hero_custome{
+    height: 480px !important;
+}
+.container_custome{
+    margin-top: -35px !important;
+}

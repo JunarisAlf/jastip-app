@@ -199,7 +199,9 @@
 		closeMarkup: '<button title="%title%" type="button" class="mfp-close"></button>',
 		mainClass: 'my-mfp-zoom-in'
 	});
-
+    $('.close-btn').on('click', function() {
+        $.magnificPopup.close();
+    });
 	// Modal images
 	$('.magnific-gallery').each(function() {
 	    $(this).magnificPopup({

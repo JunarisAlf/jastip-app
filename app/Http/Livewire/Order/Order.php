@@ -51,8 +51,9 @@ class Order extends Component
             return redirect()->route('front.index'); //error but work
         }
         $response = Http::get("https://api.mapbox.com/directions/v5/mapbox/driving/$toko_loc;$customer_loc?access_token=pk.eyJ1IjoianVuYXJpcyIsImEiOiJjbGpqb3Y1NzYwYW1xM2tvM2xjcm4xNHN0In0.U4XLQA7Snp1mIZsddqzwng");
-        $statusCode = $response->status();
+        // $statusCode = $response->status();
         $body = $response->json();
+        // dd($body);
         $this->distance = round($body['routes'][0]['distance']/1000, 1, PHP_ROUND_HALF_UP);
         $rounded_distance = round($this->distance, 0, PHP_ROUND_HALF_UP);
         $this->courir_fee = $rounded_distance * $this->courir_fee;

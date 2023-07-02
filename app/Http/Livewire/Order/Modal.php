@@ -17,8 +17,9 @@ class Modal extends Component
     public $isChatDone = false, $counter = 0;
     public $tokoMsg, $kurirMsg, $customerMsg;
 
-    public function updated(){
+    public function updatedKurirId(){
         $kurir = Kurir::find($this->kurir_id);
+        // dd()
         $kurir_name = $kurir->full_name;
         $kurir_wa = $kurir->wa_number;
         $this->courir_wa = $kurir_wa;

@@ -32,7 +32,7 @@
                         @if ($counter >= 1)
                             <x-adminlte-button  wire:click="sendMsg" label="Kirim Pesan Ke Toko" theme="success" class="btn-block" icon="fab fa-whatsapp"/>
                         @else
-                            <x-adminlte-button  disabled wire:click="sendMsg" label="Kirim Pesan Ke Kurir" theme="success" class="btn-block" icon="fab fa-whatsapp"/>
+                            <x-adminlte-button  disabled wire:click="sendMsg" label="Kirim Pesan Ke Toko" theme="success" class="btn-block" icon="fab fa-whatsapp"/>
                         @endif
                     </a>
                 </div>

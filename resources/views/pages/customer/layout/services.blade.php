@@ -1,4 +1,4 @@
-<div class="container margin_30_60">
+<div class="container " style="margin-bottom: 30px">
     <div class="main_title center">
         <span><em></em></span>
         <h2>Layanan</h2>

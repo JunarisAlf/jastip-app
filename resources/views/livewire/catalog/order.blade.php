@@ -9,7 +9,6 @@
                 alert('Izinkan Akses Lokasi. Kami Memerlukan Akses Lokasi Kamu.')
                 window.location.href = '/';
                 console.warn(`ERROR(${err.code}): ${err.message}`);
-
             }
             if (navigator.geolocation) {
                 let coords = navigator.geolocation.getCurrentPosition(success, error);
@@ -44,14 +43,12 @@
                         <span>{{number_format($p['item']->price * $p['qty'], 0, ',', '.') }}</span>
                     </li>
                 @endforeach
-               
-                
             </ul>
             <ul class="clearfix">
                 <li class="total">Total<span>{{number_format($total, 0, ',', '.') }}</span></li>
             </ul>
             <div class="btn_1_mobile">
-                <a href="#" class="btn_1 gradient full-width mb_5" wire:click="next">Next</a>
+                <a href="#" class="btn_1 gradient full-width mb_5" wire:click="next">Lanjut</a>
                 {{-- <div class="text-center"><small>Setelah in</small></div> --}}
             </div>
             </div>

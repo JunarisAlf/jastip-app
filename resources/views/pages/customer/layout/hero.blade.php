@@ -1,10 +1,10 @@
-<div class="hero_single version_1">
+<div class="hero_single version_1 hero_custome" >
     <div class="opacity-mask">
-        <div class="container">
+        <div class="container container_custome">
             <div class="row">
                 <div class="col-xl-7 col-lg-8">
-                    <h1>Duduk Manis! Makanan Sampai Ke Lokasi Mu</h1>
-                    <p>Ongkir yang ga mahal dan ramah dikantong kamu!</p>
+                    <h1 style="font-size: 1.3rem">Duduk Manis! Makanan Sampai Ke Lokasi Mu</h1>
+                    <p style="font-size: 1rem">Ongkir yang ga mahal dan ramah dikantong kamu!</p>
                     <form method="get" action="{{route('front.searchRes')}}">
                         <div class="row g-0 custom-search-input">
                             <div class="col-lg-10">

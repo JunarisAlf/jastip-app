@@ -2,7 +2,7 @@
     <div class="container margin_60_40">
         <div class="col-lg-12">
             <div class="row">
-                <div class="col-12"><h2 class="title_small">Hasil Pencarian</h2></div>
+                <div class="col-12"><h2 class="title_small">Daftar Makanan</h2></div>
                 @if(count($products) > 0)
                     @foreach ($products as $product)
                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">

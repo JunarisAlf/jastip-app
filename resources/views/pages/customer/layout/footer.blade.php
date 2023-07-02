@@ -7,7 +7,7 @@
             </div>
             <div class="col-lg-6">
                 <ul class="additional_links">
-                    <li><a href="https://wa.me?6282284393018">Made with &#9829; By JunarisAlf</a></li>
+                    <li><a href="https://wa.me?6282284393018">Dibuat Oleh Junaris, Hubungi Saya</a></li>
                     <li><a href="#0">Contact</a></li>
                     <li><span>©2023 SobatKurir</span></li>
                 </ul>
