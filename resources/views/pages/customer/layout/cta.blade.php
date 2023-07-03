@@ -1,4 +1,4 @@
-<div class="shape_element_2">
+<div class="shape_element_2" style="margin-top: -120px">
     <div class="container margin_60_0">
         <div class="row">
             <div class="col-lg-6">

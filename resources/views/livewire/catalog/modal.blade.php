@@ -12,7 +12,7 @@
     </div>
     <div class="footer">
         <div class="row small-gutters">
-            <div class="col-md-8">
+            <div class="col-12">
                 <button type="reset" class="close-btn btn_1 full-width">OK</button>
             </div>
         </div>

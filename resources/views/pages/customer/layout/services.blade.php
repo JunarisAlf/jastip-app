@@ -1,8 +1,8 @@
-<div class="container " style="margin-bottom: 30px">
+<div class="container " style="margin-bottom: 10px">
     <div class="main_title center">
         <span><em></em></span>
-        <h2>Layanan</h2>
-        <p>Banyak Layanan Untuk Semua Kebutuhan Kamu!</p>
+        <h2 style="margin-top: 10px">Layanan</h2>
+        <p style="margin-bottom:10px">Banyak Layanan Untuk Semua Kebutuhan Kamu!</p>
     </div>
     <div class="service-container">
         <a href="/">
@@ -57,7 +57,7 @@
         <a href="#" class="unavailable-services">
             <span class="badge">Akan Datang</span>
             <img src="{{asset('storage/services/cuci-karpet.png')}}" alt="">
-            <span class="service-text">Sobat Cuci Karpet</span>
+            <span class="service-text">Sobat Cucian</span>
         </a>
         <a href="#" class="unavailable-services">
             <span class="badge">Akan Datang</span>

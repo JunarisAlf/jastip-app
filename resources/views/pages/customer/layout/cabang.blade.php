@@ -1,5 +1,5 @@
 <div class="bg_gray">
-    <div class="container margin_60_40">
+    <div class="container margin_60_40" style="padding-top: 20px">
         <div class="main_title">
             <span><em></em></span>
             <h2>Lokasi</h2>

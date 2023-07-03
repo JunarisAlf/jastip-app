@@ -11,7 +11,10 @@
 }
 .service-container a{
     position: relative;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .service-text{
     font-size: .7rem;
@@ -74,7 +77,9 @@ figure{
 }
 @media (max-width: 550px) {
     .service-container {
-      gap: 40px;
+      /* gap: 40px; */
+      row-gap: 30px;
+      column-gap: 40px;
     }
     .service-container img{
       max-width: 45px;
@@ -84,8 +89,8 @@ figure{
 
 /* hero section */
 .hero_custome{
-    height: 480px !important;
+    height: 422px !important;
 }
 .container_custome{
-    margin-top: -35px !important;
+    margin-top: -17px !important;
 }
