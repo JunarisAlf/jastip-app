@@ -17,7 +17,7 @@
     align-items: center;
 }
 .service-text{
-    font-size: .7rem;
+    font-size: .5rem;
     color: black;
     display: block;
     width: 100%;
@@ -26,9 +26,10 @@
 }
 .service-container .badge {
     position: absolute;
-    font-size: 7px;
-    top: -5px;
-    left: -5px;
+    font-size: 5px;
+    top: -7px;
+    left: 50%;
+    transform: translate(-65%,0);
     background-color: red;
     color: white;
     padding: 2px 4px;
@@ -78,8 +79,8 @@ figure{
 @media (max-width: 550px) {
     .service-container {
       /* gap: 40px; */
-      row-gap: 30px;
-      column-gap: 40px;
+      row-gap: 17px;
+      column-gap: 10px;
     }
     .service-container img{
       max-width: 45px;

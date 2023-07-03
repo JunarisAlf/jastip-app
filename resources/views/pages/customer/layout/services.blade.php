@@ -62,7 +62,7 @@
         <a href="#" class="unavailable-services">
             <span class="badge">Akan Datang</span>
             <img src="{{asset('storage/services/lainnya.png')}}" alt="">
-            <span class="service-text">Sobat Lainnya</span>
+            <span class="service-text">Lainnya</span>
         </a>
     </div>
     <script>

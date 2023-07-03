@@ -23,7 +23,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-center mt-3 d-block d-lg-none"><a href="#0" class="btn_1 medium gradient pulse_bt mt-2">Register Now!</a></p>
+                <p class="text-center mt-3 d-block d-lg-none"><a href="#0" class="btn_1 medium gradient pulse_bt mt-2">Order Yuk!</a></p>
             </div>
             <div class="col-lg-5 offset-lg-1 align-self-center">
                 <div class="intro_txt">
