@@ -9,11 +9,19 @@
 
 @section('content')
     <div>
-        <form action="{{route('courir.cekSaldo')}}" method="get">
-            <x-adminlte-input name="wa" label="Nomor Whatsapp" placeholder="Nomor WA Format (628XXX)" label-class="text-success" required>
+        <form action="{{route('courir.auth')}}" method="get">
+            @csrf
+            <x-adminlte-input name="wa_number" label="Nomor Whatsapp" placeholder="Nomor WA Format (628XXX)" label-class="text-success" required value="{{old('wa_number')}}">
                 <x-slot name="prependSlot">
                     <div class="input-group-text">
                         <i class="fas fa-user text-success"></i>
+                    </div>
+                </x-slot>
+            </x-adminlte-input>
+            <x-adminlte-input name="password" type="password" label="Password" placeholder="Password" label-class="text-success" required>
+                <x-slot name="prependSlot">
+                    <div class="input-group-text">
+                        <i class="fas fa-key text-success"></i>
                     </div>
                 </x-slot>
             </x-adminlte-input>

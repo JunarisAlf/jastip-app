@@ -11,12 +11,29 @@ class KurirController extends Controller
         return view('pages.admin.kurir');
     }
     public function cekSaldoPage(Request $req){
-        $wa_number = $req->wa;
-        if($wa_number != null){
-            $kurir = Kurir::where('wa_number', $wa_number)->firstOrFail();
+        $kurirSes = session()->get('kurir');
+        if($kurirSes != null){
+            $kurir = Kurir::where('wa_number', $kurirSes['wa_number'])->firstOrFail();
             return view('pages.courir.cek-saldo', ['kurir' => $kurir]);
         }else{
             return view('pages.courir.cek-saldo-form');
+        }
+    }
+    public function auth(Request $req){
+        $req->validate([
+            'wa_number' => 'required|string',
+            'password'  => 'required|string'
+        ]);
+
+        $kurir = Kurir::where('wa_number', $req->wa_number)->where('password', $req->password)->first();
+        if($kurir == null){
+            return redirect()->back()->withErrors([
+                'wa_number' => 'Nomor WA atau Password Salah!',
+                'password' => 'Nomor WA atau Password Salah!'
+            ])->withInput();
+        }else{
+            session()->put('kurir', ['wa_number' => $kurir->wa_number]);
+            return redirect()->route('courir.cekSaldo');
         }
     }
 }

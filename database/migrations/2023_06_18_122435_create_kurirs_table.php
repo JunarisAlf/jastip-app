@@ -24,6 +24,7 @@ return new class extends Migration
                   ->constrained('cabangs', 'id', 'kurir_cabang')
                   ->cascadeOnDelete()
                   ->cascadeOnUpdate();
+            $table->string('password');
             $table->timestamps();
         });
     }

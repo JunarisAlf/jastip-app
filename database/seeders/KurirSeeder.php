@@ -20,6 +20,7 @@ class KurirSeeder extends Seeder
             'profile_img'   => 'profile_kurir_example.jpg',
             'ktp_img'       => 'ktp_kurir_example.jpg',
             'wa_number'     => '6282284393018',
+            'password'      => '123123',
             'cabang_id'     => 1,
         ]);
         Kurir::create([
@@ -29,6 +30,7 @@ class KurirSeeder extends Seeder
             'profile_img'   => 'profile_kurir_example.jpg',
             'ktp_img'       => 'ktp_kurir_example.jpg',
             'wa_number'     => '6292210002001',
+            'password'      => '123123',
             'cabang_id'     => 1,
         ]);
         Kurir::create([
@@ -38,6 +40,7 @@ class KurirSeeder extends Seeder
             'profile_img'   => 'profile_kurir_example.jpg',
             'ktp_img'       => 'ktp_kurir_example.jpg',
             'wa_number'     => '6292210002002',
+            'password'      => '123123',
             'cabang_id'     => 2,
         ]);
         Kurir::create([
@@ -47,6 +50,7 @@ class KurirSeeder extends Seeder
             'profile_img'   => 'profile_kurir_example.jpg',
             'ktp_img'       => 'ktp_kurir_example.jpg',
             'wa_number'     => '6292210002003',
+            'password'      => '123123',
             'cabang_id'     => 2,
         ]);
     }

@@ -12,7 +12,7 @@ use Livewire\WithFileUploads;
 class Create extends Component
 {
     use WithFileUploads;
-    public $full_name, $address_ktp, $address_now, $file_ktp, $file_profile, $wa_number, $cabang_id;
+    public $full_name, $address_ktp, $address_now, $file_ktp, $file_profile, $wa_number, $cabang_id, $password;
     public $cabangs = [];
     public function rules(){
         return [
@@ -22,6 +22,7 @@ class Create extends Component
             'file_ktp'      => 'required|mimes:jpg,png,jpeg|max:1024',
             'file_profile'  => 'required|mimes:jpg,png,jpeg|max:1024',
             'wa_number'     => 'required|string|starts_with:628|unique:kurirs,wa_number',
+            'password'      => 'required|string',
             'cabang_id'     => [ Rule::requiredIf(auth()->user()->role == 'superadmin'), 'nullable','exists:cabangs,id']
         ];
     }

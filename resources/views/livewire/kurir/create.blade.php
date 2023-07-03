@@ -47,6 +47,15 @@
                 </div>
             </x-slot>
         </x-adminlte-input>
+
+        <x-adminlte-input name="password" label="Password" placeholder="Password" label-class="text-success" wire:model="password">
+            <x-slot name="prependSlot">
+                <div class="input-group-text">
+                    <i class="fas fa-key text-success"></i>
+                </div>
+            </x-slot>
+        </x-adminlte-input>
+
         @can('superadmin', auth()->user())
         {{-- show only to superadmin --}}
         <x-adminlte-select name="cabang_id" label="Cabang" label-class="text-success" igroup-size="md" wire:model="cabang_id">

@@ -13,7 +13,7 @@ class Update extends Component
 {
     use WithFileUploads;
     public $show = 'hidden';
-    public $kurir_id, $full_name, $address_ktp, $address_now, $ktp_img, $profile_img, $file_ktp, $file_profile, $wa_number, $cabang_id;
+    public $kurir_id, $full_name, $address_ktp, $address_now, $ktp_img, $profile_img, $file_ktp, $file_profile, $wa_number, $password, $cabang_id;
     public $cabangs = [];
     public function rules(){
         return [
@@ -23,6 +23,7 @@ class Update extends Component
             'file_ktp'      => 'nullable|mimes:jpg,png,jpeg|max:1024',
             'file_profile'  => 'nullable|mimes:jpg,png,jpeg|max:1024',
             'wa_number'     => ['required', 'string', 'starts_with:628', Rule::unique('kurirs', 'wa_number')->ignore($this->kurir_id)],
+            'password'      => 'required|string',
             'cabang_id'     => [Rule::requiredIf(auth()->user()->role == 'superadmin'), 'nullable','exists:cabangs,id']
         ];
     }
@@ -40,6 +41,8 @@ class Update extends Component
         $this->ktp_img = $kurir->ktp_img;
         $this->profile_img = $kurir->profile_img;
         $this->wa_number = $kurir->wa_number;
+        $this->password = $kurir->password;
+
         if(auth()->user()->role == 'superadmin'){
             $this->cabang_id = $kurir->cabang_id;
         }else{

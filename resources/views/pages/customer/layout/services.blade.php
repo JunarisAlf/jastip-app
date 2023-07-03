@@ -7,42 +7,62 @@
     <div class="service-container">
         <a href="/">
             <img src="{{asset('storage/services/food.png')}}" alt="">
-            <span class="service-text">Kuliner</span>
+            <span class="service-text">Sobat Kuliner</span>
         </a>
         <a href="#" class="unavailable-services">
             <span class="badge">Akan Datang</span>
             <img src="{{asset('storage/services/ojek.png')}}" alt="">
-            <span class="service-text">Ojek</span>
+            <span class="service-text">Sobat Ojek</span>
         </a>
         <a href="#" class="unavailable-services">
             <span class="badge">Akan Datang</span>
             <img src="{{asset('storage/services/paket.png')}}" alt="">
-            <span class="service-text">Paket</span>
+            <span class="service-text">Sobat Paket</span>
         </a>
         <a href="#" class="unavailable-services">
             <span class="badge">Akan Datang</span>
             <img src="{{asset('storage/services/pasar.png')}}" alt="">
-            <span class="service-text">Pasar</span>
+            <span class="service-text">Sobat Pasar</span>
         </a>
         <a href="#" class="unavailable-services">
             <span class="badge">Akan Datang</span>
             <img src="{{asset('storage/services/print.png')}}" alt="">
-            <span class="service-text">Printing</span>
+            <span class="service-text">Sobat Printing</span>
         </a>
         <a href="#" class="unavailable-services">
             <span class="badge">Akan Datang</span>
             <img src="{{asset('storage/services/topup.png')}}" alt="">
-            <span class="service-text">TopUp</span>
+            <span class="service-text">Sobat TopUp</span>
         </a>
         <a href="#" class="unavailable-services">
             <span class="badge">Akan Datang</span>
             <img src="{{asset('storage/services/travel.png')}}" alt="">
-            <span class="service-text">Travel</span>
+            <span class="service-text">Sobat Travel</span>
         </a>
         <a href="#" class="unavailable-services">
             <span class="badge">Akan Datang</span>
             <img src="{{asset('storage/services/warung.png')}}" alt="">
-            <span class="service-text">Warung</span>
+            <span class="service-text">Sobat Warung</span>
+        </a>
+        <a href="#" class="unavailable-services">
+            <span class="badge">Akan Datang</span>
+            <img src="{{asset('storage/services/bengkel.png')}}" alt="">
+            <span class="service-text">Sobat Bengkel</span>
+        </a>
+        <a href="#" class="unavailable-services">
+            <span class="badge">Akan Datang</span>
+            <img src="{{asset('storage/services/laundry.png')}}" alt="">
+            <span class="service-text">Sobat Laundry</span>
+        </a>
+        <a href="#" class="unavailable-services">
+            <span class="badge">Akan Datang</span>
+            <img src="{{asset('storage/services/cuci-karpet.png')}}" alt="">
+            <span class="service-text">Sobat Cuci Karpet</span>
+        </a>
+        <a href="#" class="unavailable-services">
+            <span class="badge">Akan Datang</span>
+            <img src="{{asset('storage/services/lainnya.png')}}" alt="">
+            <span class="service-text">Sobat Lainnya</span>
         </a>
     </div>
     <script>

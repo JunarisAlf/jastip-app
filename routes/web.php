@@ -66,6 +66,8 @@ Route::get('/order-success', [FrontController::class, 'confirm'])->name('front.o
 
 // Kurir
 Route::get('/cek-saldo', [KurirController::class, 'cekSaldoPage'])->name('courir.cekSaldo');
+Route::get('/cek-saldo/auth', [KurirController::class, 'auth'])->name('courir.auth');
+
 
 
 

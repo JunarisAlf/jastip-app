@@ -65,6 +65,14 @@
                     </x-slot>
                 </x-adminlte-input>
                 
+                <x-adminlte-input name="password" label="Password" placeholder="Password"  wire:model="password">
+                    <x-slot name="prependSlot">
+                        <div class="input-group-text">
+                            <i class="fas fa-key "></i>
+                        </div>
+                    </x-slot>
+                </x-adminlte-input>
+
                 @can('superadmin', auth()->user())
                 <x-adminlte-select name="cabang_id" label="Cabang"  igroup-size="md" wire:model="cabang_id">
                     <x-slot name="prependSlot">
