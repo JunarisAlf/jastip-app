@@ -10,11 +10,12 @@ use Livewire\WithFileUploads;
 class Create extends Component
 {
     use WithFileUploads;
-    public $name, $file_banner;
+    public $name, $file_banner, $link;
     public function rules(){
         return [
             'name'          => 'required|string',
             'file_banner'   => 'required|mimes:jpg,png,jpeg|max:1024',
+            'link'          => 'required|string|url'
         ];
     }
   

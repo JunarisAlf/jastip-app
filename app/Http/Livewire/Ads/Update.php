@@ -11,7 +11,7 @@ class Update extends Component
 {
     use WithFileUploads;
     public $show = 'hidden';
-    public $ads_id, $name, $banner_img, $file_banner, $is_active;
+    public $ads_id, $name, $banner_img, $file_banner, $is_active=1, $link;
     public $statuses = [
         [
             'value' => 1,
@@ -27,6 +27,8 @@ class Update extends Component
             'name'          => 'required|string',
             'is_active'     => 'required|boolean',
             'file_banner'   => 'nullable|mimes:jpg,png,jpeg|max:1024',
+            'link'          => 'required|string|url'
+
         ];
     }
 
@@ -35,6 +37,7 @@ class Update extends Component
         $ads = Ads::find($id);
         $this->ads_id = $ads->id;
         $this->name = $ads->name;
+        $this->link = $ads->link;
         $this->banner_img = $ads->banner_img;
         $this->show = 'block';
     }

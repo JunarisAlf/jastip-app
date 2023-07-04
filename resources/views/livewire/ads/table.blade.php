@@ -6,6 +6,7 @@
             <tr>
                 <th>Nama</th>
                 <th>Status</th>
+                <th>Link</th>
                 <th>Gambar</th>
                 <th>Aksi</th>
             </tr>
@@ -22,10 +23,14 @@
                         @endif
                     </td>
                     <td>
+                        <a href="{{$ad->link}}" target="_blank">{{$ad->link}}</a>
+                    </td>
+                    <td>
                         <a href="{{asset('storage/iklan') . '/'. $ad->banner_img}}" target="_blank" rel="noopener noreferrer">
                             <img src="{{asset('storage/iklan') . '/'. $ad->banner_img}}" alt="Foto Iklan" width="80px">
                         </a>
                     </td>
+                    
                     <td>
                         <x-adminlte-button class="btn-sm" theme="warning" icon="fas fa-pencil-alt"
                         wire:click="edit({{$ad->id}})"/>
