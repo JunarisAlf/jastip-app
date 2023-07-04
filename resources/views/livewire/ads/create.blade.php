@@ -1,5 +1,5 @@
 <form method="post" wire:submit.prevent="store">
-    <x-adminlte-card title="Tambah Data Kurir" theme="success" icon="fas fa-plus-square">
+    <x-adminlte-card title="Tambah Data Iklan" theme="success" icon="fas fa-plus-square">
         
         <x-adminlte-input name="name" label="Nama Iklan" placeholder="Nama Iklan" label-class="text-success" wire:model="name">
             <x-slot name="prependSlot">
