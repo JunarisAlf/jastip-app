@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('profile_img');
             $table->foreignId('cabang_id')
                   ->constrained('cabangs', 'id', 'toko_cabang')
-                  ->restrictOnDelete()
+                  ->cascadeOnDelete()
                   ->cascadeOnUpdate();
             $table->timestamps();
         });

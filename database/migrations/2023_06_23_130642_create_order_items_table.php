@@ -15,11 +15,10 @@ return new class extends Migration
             $table->id();
             $table->uuid('order_id')
                   ->constrained('orders', 'id', 'order_items');
-            $table->foreignId('product_id')
+            $table->foreignId('product_id') 
                   ->constrained('products', 'id', 'product_order')
                   ->restrictOnUpdate()
-                  ->restrictOnDelete();
-            
+                  ->cascadeOnDelete();
             $table->integer('qty');
             $table->integer('price');
             $table->integer('total');

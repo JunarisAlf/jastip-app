@@ -21,15 +21,14 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('app_fee');
             $table->integer('courir_fee');
-            $table->foreignId('cabang_id')
+            $table->foreignId('cabang_id') 
                   ->constrained('cabangs', 'id', 'order_cabang')
                   ->restrictOnUpdate()
-                  ->restrictOnDelete();
-            $table->foreignId('courir_id')
-                  ->nullable()
+                  ->cascadeOnDelete();
+            $table->foreignId('courir_id') 
                   ->constrained('kurirs', 'id', 'courir_order')
                   ->restrictOnUpdate()
-                  ->restrictOnDelete();
+                  ->cascadeOnDelete();
             $table->enum('status', ['created', 'processed', 'done']);
             $table->timestamps();
         });
