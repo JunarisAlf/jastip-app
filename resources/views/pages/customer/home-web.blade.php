@@ -10,11 +10,11 @@
 
     <main>
         @include('pages.customer.layout.hero')
-        {{-- @include('pages.customer.layout.services') --}}
+        @include('pages.customer.layout.services')
         @include('pages.customer.layout.ads')
         @include('pages.customer.layout.cabang')
-        {{-- @include('pages.customer.layout.cta') --}}
-        {{-- @include('pages.customer.layout.footer') --}}
+        @include('pages.customer.layout.cta')
+        @include('pages.customer.layout.footer')
     </main>
     
 @endsection

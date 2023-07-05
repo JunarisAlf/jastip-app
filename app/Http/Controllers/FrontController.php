@@ -13,6 +13,11 @@ class FrontController extends Controller
     public function index(){
         $ads = Ads::where('is_active', true)->get();
         $cabang = Cabang::all();
+        return view('pages.customer.home-web', ['ads' => $ads, 'cabang' => $cabang]);
+    }
+    public function apkIndex(){
+        $ads = Ads::where('is_active', true)->get();
+        $cabang = Cabang::all();
         return view('pages.customer.home', ['ads' => $ads, 'cabang' => $cabang]);
     }
     public function searchRes(Request $req){
