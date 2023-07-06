@@ -7,7 +7,7 @@
 
 @include('pages.customer.layout.header')
 <main>
-    <div class="page_header element_to_stick" style="margin-top: 80px"> 
+    <div class="page_header" style="margin-top: 80px"> 
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-lg-5 col-md-5">

@@ -1,4 +1,6 @@
-@foreach ($products as $product)
+
+<div class="row">
+    @foreach ($products as $product)
     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6" wire:click="itemClick({{$product->id}}, '{{$product->toko->slug}}')">
         <div class="strip" >
             <figure >
@@ -18,3 +20,4 @@
         </div>
     </div>
 @endforeach
+</div>
