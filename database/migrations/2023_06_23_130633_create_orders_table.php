@@ -25,7 +25,8 @@ return new class extends Migration
                   ->constrained('cabangs', 'id', 'order_cabang')
                   ->restrictOnUpdate()
                   ->cascadeOnDelete();
-            $table->foreignId('courir_id') 
+            $table->foreignId('courir_id')
+                  ->nullable()
                   ->constrained('kurirs', 'id', 'courir_order')
                   ->restrictOnUpdate()
                   ->cascadeOnDelete();

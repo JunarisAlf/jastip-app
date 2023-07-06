@@ -60,7 +60,7 @@ class Order extends Component
         // harga
         $this->total = $harga;
         $this->grand_total = $harga + $this->app_fee + $this->courir_fee;
-        $this->cabang_id = $this->orders[0]['item']->toko->id;
+        $this->cabang_id = $this->orders[0]['item']->toko->cabang->id;
     }
 
     public function rules(){

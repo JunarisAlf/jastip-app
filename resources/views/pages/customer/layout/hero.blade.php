@@ -3,7 +3,7 @@
         <div class="container container_custome">
             <div class="row">
                 <div class="col-xl-7 col-lg-8">
-                    <h1 style="font-size: 1.3rem">Duduk Manis! Makanan Sampai Ke Lokasi Mu</h1>
+                    <h1 style="font-size: 1.3rem">Duduk Manis! Makanan Sampai Ke Lokasimu</h1>
                     <p style="font-size: 1rem; margin-bottom: -8px">Ongkir yang ga mahal dan ramah dikantong kamu!</p>
                     <form method="get" action="{{route('front.searchRes')}}">
                         <div class="row g-0 custom-search-input">
