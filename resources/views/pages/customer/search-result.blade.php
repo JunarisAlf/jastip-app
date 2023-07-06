@@ -29,3 +29,11 @@
 </main>
 
 @endsection
+
+@section('js')
+    @livewireScripts
+@endsection
+
+@section('css')
+    @livewireStyles
+@stop

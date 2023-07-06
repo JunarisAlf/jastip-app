@@ -25,7 +25,7 @@
         </div>
         <!-- /head -->
         <div class="main">
-            <ul class="clearfix">
+            <ul >
                 @php
                     $pesanan = [];
                     $total = 0;
@@ -39,7 +39,7 @@
                 @endphp
                 @foreach ($pesanan as $p)
                     <li>
-                        <a href="#0">{{$p['qty']}}X {{$p['item']->name}}</a>
+                        <a  href="">{{$p['qty']}}X {{$p['item']->name}}</a>
                         <span>{{number_format($p['item']->price * $p['qty'], 0, ',', '.') }}</span>
                     </li>
                 @endforeach

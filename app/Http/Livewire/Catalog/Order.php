@@ -9,6 +9,13 @@ class Order extends Component
     protected $listeners = ['inc' => 'inc', 'dec' => 'dec', 'setLoc' => 'setLoc'];
     public $orders = [];
     public $lat, $long;
+    public function mount(){
+        $first_order_id = session()->get('first_order_id');
+        if($first_order_id != null){
+            $this->inc($first_order_id);
+        }
+    }
+   
     public function inc($id){
         if (array_key_exists($id, $this->orders)) {
             $this->orders[$id] += 1;

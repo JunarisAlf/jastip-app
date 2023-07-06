@@ -7,7 +7,12 @@ use Livewire\Component;
 class Modal extends Component
 {
     public $name = '', $qty, $product_id, $orders;
-
+    public function mount(){
+        $first_order_id = session()->get('first_order_id');
+        if($first_order_id != null){
+            $this->orders[$first_order_id] = 1;
+        }
+    }
     protected $listeners = ['openModal' => 'open', 'counter_changed' => 'refresh'];
     public function open($id, $name){
         $this->product_id = $id;
