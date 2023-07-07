@@ -41,6 +41,9 @@ class Table extends Component
             $this->emit('ring_bell');
         }
     }
+    public function delete($id){
+        $this->emit('delete_order', $id);
+    }
     public function render(){
         return view('livewire.order.table');
     }

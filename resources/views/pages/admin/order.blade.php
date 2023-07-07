@@ -5,6 +5,8 @@
 @section('content_header')
     @livewire('alert.simple-alert')
     @livewire('order.modal')
+    @livewire('order.delete')
+
 
     <h1>Order</h1>
 @stop

@@ -62,6 +62,7 @@
                         @else
                             <x-adminlte-button disabled label="Prosess" class="btn-sm" theme="info" icon="fas fa-arrow-alt-circle-right" wire:click="proccess('{{$order->id}}')"/>
                         @endif
+                        <x-adminlte-button  label="Hapus" class="btn-sm" theme="danger" icon="fas fa-trash-alt" wire:click="delete('{{$order->id}}')"/>
                     </td>
                 </tr>
             @endforeach
