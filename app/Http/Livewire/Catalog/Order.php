@@ -39,6 +39,8 @@ class Order extends Component
         if(isset($this->orders[$id])){
             unset($this->orders[$id]);
         } 
+        $this->emit('counter_changed',$id, $this->orders); 
+
     }
     public function setLoc($lat, $long){
         $this->lat = $lat;

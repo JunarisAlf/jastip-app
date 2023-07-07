@@ -102,9 +102,9 @@ figure{
     flex-direction: row;
     justify-content: space-between;
 }
-/* .x-order_item div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 8px;
-} */
+
+.item-unavailable{
+    filter: grayscale(100%);
+    opacity: 0.6;
+    pointer-events: none;
+}

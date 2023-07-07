@@ -59,8 +59,11 @@
     <div class="btn_reserve_fixed"><a href="#0" class="btn_1 gradient full-width">Lihat Order</a></div>
     <script>
         window.onload = function(){
-            let box_order = document.getElementsByClassName('box_order')[0];
-            box_order.style.display = 'none';
+            if(window.innerWidth <= 990){
+                console.log('hello')
+                let box_order = document.getElementsByClassName('box_order')[0];
+                box_order.style.display = 'none';
+            }
         }
     </script>
 </div>

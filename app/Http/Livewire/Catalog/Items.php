@@ -6,7 +6,8 @@ use Livewire\Component;
 
 class Items extends Component
 {
-    public $products;
+    public $products, $toko;
+
     public function openModal($id, $name){
         $this->emit('openModal', $id, $name);
     }

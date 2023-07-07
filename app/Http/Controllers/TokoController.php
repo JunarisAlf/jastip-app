@@ -45,11 +45,12 @@ class TokoController extends Controller
         $toko = Toko::where('wa_number', $toko_session['wa_number'])->first();
         return view('pages.toko.product', ['toko' => $toko]);
     }
-    public function toggleStatus(Request $req){
+    public function toggleStatus(){
         $toko_session = session()->get('toko');
         $toko = Toko::where('wa_number', $toko_session['wa_number'])->first();
         $toko->is_open = !$toko->is_open;
         $toko->save();
+        // $toko->products()->
         return redirect()->back();
     }
 

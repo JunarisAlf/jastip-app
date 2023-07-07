@@ -24,9 +24,13 @@ class FrontController extends Controller
         $query = $req->cari;
         $products = [];
         if($query == null){
-            $products = Product::all();
+            $products = Product::where('is_available', true)->whereHas('toko', function ($query) {
+                $query->where('is_open', true);
+            })->get();
         }else{
-            $products = Product::where('name', 'like', '%' . $query . '%')->get();
+            $products = Product::where('is_available', true)->where('name', 'like', '%' . $query . '%')->whereHas('toko', function ($query) {
+                $query->where('is_open', true);
+            })->get();
         }
         $ads = Ads::where('is_active', true)->get();
         $cabang = Cabang::all();
@@ -36,9 +40,15 @@ class FrontController extends Controller
         $query = $req->id;
         $products = [];
         if($query == null){
-            $products = Product::all();
+            $products = Product::where('is_available', true)->whereHas('toko', function ($query) {
+                $query->where('is_open', true);
+            })->get();
         }else{
-            $products = Cabang::with('tokos.products')->find($query)->tokos->flatMap->products;
+            $products = Cabang::with(['tokos.products' => function($query){
+                $query->where('is_available', true)->whereHas('toko', function($q){
+                    $q->where('is_open', true);
+                });
+            }])->find($query)->tokos->flatMap->products;
         }
         $ads = Ads::where('is_active', true)->get();
         $cabang = Cabang::all();
