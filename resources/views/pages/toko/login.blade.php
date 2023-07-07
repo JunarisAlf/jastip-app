@@ -1,15 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Cek Saldo  | SobatKurir')
+@section('title', 'Login  | SobatKurir')
 
 @section('content_header')
     @livewire('alert.simple-alert')
-    <h1>Cek Saldo</h1>
+    <h1>Login</h1>
 @stop
 
 @section('content')
     <div>
-        <form action="{{route('courir.auth')}}" method="post">
+        <form action="{{route('toko.auth')}}" method="post">
             @csrf
             <x-adminlte-input name="wa_number" label="Nomor Whatsapp" placeholder="Nomor WA Format (628XXX)" label-class="text-success" required value="{{old('wa_number')}}">
                 <x-slot name="prependSlot">

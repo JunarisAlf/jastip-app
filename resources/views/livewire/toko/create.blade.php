@@ -19,11 +19,19 @@
         <x-adminlte-input name="wa_number" label="Nomor Wa" placeholder="Format 628XXX" label-class="text-success" wire:model="wa_number">
             <x-slot name="prependSlot">
                 <div class="input-group-text">
-                    <i class="fas fa-map-marker-alt text-success"></i>
+                    <i class="fab fa-whatsapp text-success"></i>
                 </div>
             </x-slot>
         </x-adminlte-input>
 
+        <x-adminlte-input name="password" label="Password" placeholder="Isikan Password" label-class="text-success" wire:model="password">
+            <x-slot name="prependSlot">
+                <div class="input-group-text">
+                    <i class="fas fa-key text-success"></i>
+                </div>
+            </x-slot>
+        </x-adminlte-input>
+        
         <x-adminlte-input name="address" label="Alamat Toko" placeholder="Alamat Toko" label-class="text-success" wire:model="address">
             <x-slot name="prependSlot">
                 <div class="input-group-text">

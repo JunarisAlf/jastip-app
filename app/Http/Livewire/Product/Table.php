@@ -19,6 +19,13 @@ class Table extends Component
     public function delete($id, $name){
         $this->emit('delete_product', $id, $name);
     }
+    public function toggleStatus($id){
+        $product = Product::find($id);
+        $product->is_available = !$product->is_available;
+        $product->save();
+        $this->refresh();
+
+    }
     public function render() {
         return view('livewire.product.table');
     }

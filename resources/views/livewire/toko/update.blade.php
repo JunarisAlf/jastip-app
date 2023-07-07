@@ -32,7 +32,14 @@
                 <x-adminlte-input name="wa_number" label="Nomor Wa" placeholder="Format 628XXX"  wire:model="wa_number">
                     <x-slot name="prependSlot">
                         <div class="input-group-text">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                    </x-slot>
+                </x-adminlte-input>
+                <x-adminlte-input name="password" label="Password" placeholder="Isikan Password"  wire:model="password">
+                    <x-slot name="prependSlot">
+                        <div class="input-group-text">
+                            <i class="fas fa-key"></i>
                         </div>
                     </x-slot>
                 </x-adminlte-input>

@@ -13,13 +13,14 @@ class Create extends Component
 {
 
     use WithFileUploads;
-    public $name, $slug,$description, $wa_number, $address, $latlong, $file_cover, $file_profile, $cabang_id;
+    public $name, $slug,$description, $wa_number, $password, $address, $latlong, $file_cover, $file_profile, $cabang_id;
     public $cabangs = [];
     public function rules(){
         return [
             'name'          => 'required|string|unique:tokos,name',
             'description'   => 'required|string',
             'wa_number'     => 'required|string|starts_with:628|unique:tokos,wa_number',
+            'password'      => 'required|string',
             'address'       => 'required|string',
             'latlong'       => 'required|string',
             'file_cover'    => 'required|mimes:jpg,png,jpeg|max:1024',

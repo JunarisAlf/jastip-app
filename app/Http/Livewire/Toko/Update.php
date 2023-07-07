@@ -13,13 +13,14 @@ class Update extends Component
 {
     use WithFileUploads;
     public $show = 'hidden';
-    public $toko_id, $slug,$name, $description, $wa_number, $address, $latlong, $cover_img, $profile_img ,$file_cover, $file_profile, $cabang_id;
+    public $toko_id, $slug,$name, $description, $wa_number, $password, $address, $latlong, $cover_img, $profile_img ,$file_cover, $file_profile, $cabang_id;
     public $cabangs = [];
     public function rules(){
         return [
             'name'          => 'required|string',
             'description'   => 'required|string',
             'wa_number'     => ['required', 'string', 'starts_with:628', Rule::unique('tokos', 'wa_number')->ignore($this->toko_id)],
+            'password'      => 'required|string',
             'address'       => 'required|string',
             'latlong'       => 'required|string',
             'file_cover'    => 'nullable|mimes:jpg,png,jpeg|max:1024',
@@ -38,6 +39,7 @@ class Update extends Component
         $this->name = $toko->name;
         $this->description = $toko->description;
         $this->wa_number = $toko->wa_number;
+        $this->password = $toko->password;
         $this->address = $toko->address;
         $this->latlong = $toko->lat . ',' . $toko->long;
         $this->cover_img = $toko->cover_img;

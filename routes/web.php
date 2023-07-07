@@ -58,6 +58,14 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
 Route::get('/', [FrontController::class, 'apkIndex'])->name('front.home');
 Route::get('/home', [FrontController::class, 'index'])->name('front.index');
 
+// Toko
+Route::get('/toko/login', [TokoController::class, 'login'])->name('toko.login');
+Route::post('/toko/login', [TokoController::class, 'auth'])->name('toko.auth');
+Route::get('/toko/dashboard', [TokoController::class, 'dashboard'])->name('toko.dashboard');
+Route::get('/toko/product', [TokoController::class, 'product'])->name('toko.product');
+Route::get('/toko/toggle-status', [TokoController::class, 'toggleStatus'])->name('toko.toggleStatus');
+
+
 Route::get('/item', [FrontController::class, 'searchRes'])->name('front.searchRes');
 Route::get('/cabang', [FrontController::class, 'cabangRes'])->name('front.cabangRes');
 Route::get('/toko/{slug}', [FrontController::class, 'catalog'])->name('front.catalog');
@@ -66,9 +74,10 @@ Route::get('/order-success', [FrontController::class, 'confirm'])->name('front.o
 
 // Kurir
 Route::get('/cek-saldo', [KurirController::class, 'cekSaldoPage'])->name('courir.cekSaldo');
-Route::get('/cek-saldo/auth', [KurirController::class, 'auth'])->name('courir.auth');
+Route::post('/cek-saldo/auth', [KurirController::class, 'auth'])->name('courir.auth');
 Route::get('/toggle-status', [KurirController::class, 'toggleStatus'])->name('courir.toggleStatus');
 
+// Toko
 
 
 

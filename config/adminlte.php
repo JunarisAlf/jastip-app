@@ -310,6 +310,21 @@ return [
         ],
         [
             'text'        => 'Dashboard',
+            'route'       => 'toko.dashboard',
+            'icon'        => 'fa fa-home',
+            'can'         => 'toko'
+        ],
+        [
+            'text'        => 'Produk',
+            'route'       => 'toko.product',
+            'icon'        => 'fa fa-boxes',
+            'can'         => 'toko'
+        ],
+
+
+
+        [
+            'text'        => 'Dashboard',
             'route'       => 'admin.home',
             'icon'        => 'fa fa-home',
             'can'         => 'auth'
