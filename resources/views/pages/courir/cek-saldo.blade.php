@@ -4,13 +4,23 @@
 
 @section('content_header')
     @livewire('alert.simple-alert')
-    <h1>{{$kurir->full_name}}</h1>
+    <h1>{{$kurir->full_name}} {{$kurir->is_active ? '(Aktif)' : '(Non-Aktif)'}}</h1>
 @stop
 
 @section('content')
     <div>
         <x-adminlte-info-box title="Rp. {{number_format($kurir->saldo, 0, ',', '.')}}" text="Saldo" icon="fas fa-lg fa-money-bill text-primary" theme="gradient-primary" icon-theme="white"/>
         <x-adminlte-info-box title="Rp. {{number_format($kurir->orders()->sum('courir_fee'), 0, ',', '.')}}" text="Pendapatan Total" icon="fas fa-lg fa-dollar-sign text-dark" icon-theme="dark" theme="warning" icon-theme="white"/>
+        @if ($kurir->is_active)
+            <a href="{{route('courir.toggleStatus')}}">
+                <x-adminlte-button  label="Non-Aktifkan Akun" theme="info" class="btn-block" icon="fas fa-power-off"/>
+            </a>
+        @else
+            <a href="{{route('courir.toggleStatus')}}">
+                <x-adminlte-button  label="Aktifkan Akun" theme="success" class="btn-block" icon="fas fa-power-off"/>
+            </a>
+        @endif
+        
 
         <div >
             <div class="table-responsive">

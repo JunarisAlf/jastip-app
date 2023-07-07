@@ -36,4 +36,11 @@ class KurirController extends Controller
             return redirect()->route('courir.cekSaldo');
         }
     }
+    public function toggleStatus(Request $req){
+        $kurir_session = session()->get('kurir');
+        $kurir = Kurir::where('wa_number', $kurir_session['wa_number'])->first();
+        $kurir->is_active = !$kurir->is_active;
+        $kurir->save();
+        return redirect()->back();
+    }
 }

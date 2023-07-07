@@ -306,7 +306,7 @@ return [
             'text'        => 'Dashboard',
             'route'       => 'courir.cekSaldo',
             'icon'        => 'fa fa-home',
-            'can'         => 'guest'
+            'can'         => 'kurir'
         ],
         [
             'text'        => 'Dashboard',

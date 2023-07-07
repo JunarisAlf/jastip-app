@@ -30,8 +30,13 @@ class AuthServiceProvider extends ServiceProvider
                 return true;
             }
         });
-        Gate::define('guest', function(?User $user){
-            if($user == null){
+        Gate::define('kurir', function(?User $user){
+            if(session()->has('kurir')){
+                return true;
+            }
+        });
+        Gate::define('toko', function(?User $user){
+            if(session()->has('toko')){
                 return true;
             }
         });
