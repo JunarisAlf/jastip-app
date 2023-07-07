@@ -89,7 +89,7 @@ class Modal extends Component
         $user = auth()->user();
         $this->order_id = $id;
         $order = Order::find($id);
-        $this->kurirs = $user->cabang->kurirs()->where('saldo', '>=', $order->app_fee)->get();
+        $this->kurirs = $user->cabang->kurirs()->where('saldo', '>=', $order->app_fee)->where('is_active', true)->get();
         $this->show = 'block';
 
     }

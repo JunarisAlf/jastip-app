@@ -3,6 +3,10 @@
         window.onload = function(){
             function success(pos) {
                 const crd = pos.coords;
+                if(crd == null){
+                    alert('Gagal mendapatkan lokasi!');
+                    window.location.href = '/';
+                }
                 Livewire.emit('setLoc', crd.latitude,crd.longitude )
             }
             function error(err) {
@@ -15,6 +19,11 @@
                 console.log(coords)
             } else {
                 x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+            // close order modal
+            if(window.innerWidth <= 990){
+                let box_order = document.getElementsByClassName('box_order')[0];
+                box_order.style.display = 'none';
             }
         }
     </script>
@@ -57,13 +66,5 @@
     </div>
     <!-- /box_order -->
     <div class="btn_reserve_fixed"><a href="#0" class="btn_1 gradient full-width">Lihat Order</a></div>
-    <script>
-        window.onload = function(){
-            if(window.innerWidth <= 990){
-                console.log('hello')
-                let box_order = document.getElementsByClassName('box_order')[0];
-                box_order.style.display = 'none';
-            }
-        }
-    </script>
+
 </div>

@@ -1,10 +1,11 @@
 <div>
     <div class="table-responsive">
-    <table class="table table-bordered" style="min-width: 100%">
+    <table class="table table-bordered" style="width: max-content">
         <thead>
             <tr>
                 <th>Nama Lengkap</th>
                 <th>Status</th>
+                <th>Saldo</th>
                 <th>Nomor WA</th>
                 <th>Cabang</th>
                 <th>Alamat KTP</th>
@@ -23,6 +24,7 @@
                     @else
                         <td>NON-AKTIF</td>
                     @endif
+                    <td>Rp. {{number_format($kurir->saldo, 0, ',', '.')}}</td>
                     <td>{{$kurir->wa_number}}</td>
                     <td>{{$kurir->cabang->name}}</td>
                     <td>{{$kurir->address_ktp}}</td>
