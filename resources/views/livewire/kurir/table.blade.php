@@ -4,6 +4,7 @@
         <thead>
             <tr>
                 <th>Nama Lengkap</th>
+                <th>Status</th>
                 <th>Nomor WA</th>
                 <th>Cabang</th>
                 <th>Alamat KTP</th>
@@ -17,6 +18,11 @@
             @foreach ($kurirs as $kurir)
                 <tr>
                     <td>{{$kurir->full_name}}</td>
+                    @if ($kurir->is_active)
+                        <td>AKTIF</td>
+                    @else
+                        <td>NON-AKTIF</td>
+                    @endif
                     <td>{{$kurir->wa_number}}</td>
                     <td>{{$kurir->cabang->name}}</td>
                     <td>{{$kurir->address_ktp}}</td>

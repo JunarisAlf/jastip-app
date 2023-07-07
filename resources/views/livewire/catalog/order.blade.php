@@ -18,7 +18,7 @@
             }
         }
     </script>
-    <div class="box_order mobile_fixed">
+    <div class="box_order mobile_fixed" style="display: block">
         <div class="head">
             <h3>Pesanan Anda</h3>
             <a href="#0" class="close_panel_mobile"><i class="icon_close"></i></a>
@@ -38,9 +38,9 @@
                     }
                 @endphp
                 @foreach ($pesanan as $p)
-                    <li>
-                        <a  href="">{{$p['qty']}}X {{$p['item']->name}}</a>
-                        <span>{{number_format($p['item']->price * $p['qty'], 0, ',', '.') }}</span>
+                    <li class="x-order_item">
+                        <span  href="">{{$p['qty']}}X {{$p['item']->name}} = {{number_format($p['item']->price * $p['qty'], 0, ',', '.') }}</span>
+                        <span style="color: red" wire:click="del({{$p['item']->id}})">Hapus</span>
                     </li>
                 @endforeach
             </ul>
@@ -57,5 +57,10 @@
     </div>
     <!-- /box_order -->
     <div class="btn_reserve_fixed"><a href="#0" class="btn_1 gradient full-width">Lihat Order</a></div>
-   
+    <script>
+        window.onload = function(){
+            let box_order = document.getElementsByClassName('box_order')[0];
+            box_order.style.display = 'none';
+        }
+    </script>
 </div>

@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <x-adminlte-card title="Daftar Kurir" theme="success" icon="fas fa-route">
+                <x-adminlte-card title="Daftar Order" theme="success" icon="fas fa-route">
                     @livewire('order.table')
                 </x-adminlte-card>
             </div>

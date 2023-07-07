@@ -95,3 +95,16 @@ figure{
 .container_custome{
     margin-top: -17px !important;
 }
+
+.x-order_item{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* .x-order_item div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+} */
