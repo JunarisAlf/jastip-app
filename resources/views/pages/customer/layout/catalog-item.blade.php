@@ -8,7 +8,7 @@
                 </section>
             </div>
             <!-- /col -->
-            @livewire('catalog.order')
+            @livewire('catalog.order', ['toko' => $toko])
 
         </div>
         <!-- /row -->

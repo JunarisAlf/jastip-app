@@ -6,12 +6,13 @@ use Livewire\Component;
 
 class Order extends Component
 {
+    public $toko, $show = false;
     protected $listeners = ['inc' => 'inc', 'dec' => 'dec', 'setLoc' => 'setLoc'];
     public $orders = [];
     public $lat, $long;
     public function mount(){
         $first_order_id = session()->get('first_order_id');
-        if($first_order_id != null){
+        if($first_order_id != null && $this->toko->is_open){
             $this->inc($first_order_id);
         }
     }
@@ -39,6 +40,7 @@ class Order extends Component
         if(isset($this->orders[$id])){
             unset($this->orders[$id]);
         } 
+        $this->show = true;
         $this->emit('counter_changed',$id, $this->orders); 
 
     }
