@@ -55,7 +55,7 @@
                             wire:click="proccess('{{$order->id}}')"/>
                         @elseif ($order->status == 'processed')
                             <a 
-                            href={{"https://wa.me/" . $order->kurir->wa_number ."?text=" . rawurlencode("*Order Selesai!*\nSisa Saldo:  Rp." .  number_format($order->kurir->saldo - $order->app_fee, 0, ',', '.') . "\n Informasi lebih lanjut, klik link berikut: " . url('/cek-saldo?wa='). $order->kurir->wa_number )}} target="_blank">
+                            href={{"https://wa.me/" . $order->kurir->wa_number ."?text=" . rawurlencode("*Order Selesai!*\nSisa Saldo:  Rp." .  number_format($order->kurir->saldo - $order->app_fee, 0, ',', '.') . "\n Informasi lebih lanjut, klik link berikut: " . url('/cek-saldo') )}} target="_blank">
                                 <x-adminlte-button label="Selesai" class="btn-sm" theme="success" icon="fas fa-check"
                                 wire:click="done('{{$order->id}}')"/>
                             </a>
